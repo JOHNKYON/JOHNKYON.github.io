@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.6" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.6">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.6">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.6">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.6" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.0.6',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="In the last blog, we had a slight feeling about the magical things that special methods can do. This time, we&amp;#39;ll talk deeper into how to use those special methods. 1.2 How to Use Special Methods S">
+<meta name="keywords" content="Engineer,Python,Programming">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Data Model, Special Methods">
+<meta property="og:url" content="https://johnkyon.github.io/2018/12/06/python2/index.html">
+<meta property="og:site_name" content="Zhao&#39;s Notebook">
+<meta property="og:description" content="In the last blog, we had a slight feeling about the magical things that special methods can do. This time, we&amp;#39;ll talk deeper into how to use those special methods. 1.2 How to Use Special Methods S">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-07-12T07:35:26.917Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Data Model, Special Methods">
+<meta name="twitter:description" content="In the last blog, we had a slight feeling about the magical things that special methods can do. This time, we&amp;#39;ll talk deeper into how to use those special methods. 1.2 How to Use Special Methods S">
+
+
+
+
+
+
+  <link rel="canonical" href="https://johnkyon.github.io/2018/12/06/python2/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Data Model, Special Methods | Zhao's Notebook</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119185454-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-119185454-1');
+</script>
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> 
+
+<div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zhao's Notebook</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Computer Science, Math, and >>></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+          
+  <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+</li>
+
+      
+
+      
+    </ul>
+  
+
+  
+    
+
+    
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+    
+
+  
+
+
+  
+
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://johnkyon.github.io/2018/12/06/python2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhao Fengbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zhao's Notebook">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Data Model, Special Methods</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-06T22:39:46+09:00">2018-12-06</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/06/python2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/12/06/python2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>In the last <a href="/2018/10/28/python1/" title="blog">blog</a>, we had a slight feeling about the magical things that special methods can do. This time, we&#39;ll talk deeper into how to use those special methods.</p>
+<h2 id="12-how-to-use-special-methods"><a href="#1-2-How-to-Use-Special-Methods" class="headerlink" title="1.2 How to Use Special Methods"></a>1.2 How to Use Special Methods</h2><blockquote>
+<p>Specially, we have to be clear that, special methods are designed to be called by Python interpreter, and not by YOU.</p>
+</blockquote>
+<p>In most cases, we don&#39;t write something like <strong>my_object.__len__()</strong>. Just like we mentioned, everything in Python is trying to stay in consistency, so when we write <strong>len(my_object)</strong>, and the <strong>my_object</strong> is a user<em>defined class, Python will call the **\</em>_len__()** instance method you implemented. Again, such consistency is the key point that Python can get rid of a huge mess.</p>
+<p>Even more, for some built-in types like <strong>list, str, bytearray</strong>, and so on, the interpreter may take some short-cut when a special function is called. For example, the CPython implementation of <strong>len()</strong> actually returns the value of <strong>ob_size</strong> field in the <strong>PyVarObject</strong> C struct, that represents the variable-size built-in object in memory. Of course this is much faster than calling a method.</p>
+<p>More often than not, the calling of special methods is implicit. Like <strong>for i in x:</strong>, indeed it cause the invocation of <strong>iter(x)</strong>, which in turn may call <strong>__iter__()</strong> if it&#39;s available. (This also indicates that, if we implemented our own <strong>__iter__()</strong> in our user-defined class, we may use <strong>for i in my_object:</strong>), see an example!</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span>:</span></span><br><span class="line"><span class="meta">... </span>    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, n)</span>:</span></span><br><span class="line"><span class="meta">... </span>        self.a = []</span><br><span class="line"><span class="meta">... </span>        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, n):</span><br><span class="line"><span class="meta">... </span>            self.a.append(i)</span><br><span class="line"><span class="meta">... </span>    </span><br><span class="line"><span class="meta">... </span>    <span class="function"><span class="keyword">def</span> <span class="title">__iter__</span><span class="params">(self)</span>:</span></span><br><span class="line"><span class="meta">... </span>        curr = <span class="number">0</span></span><br><span class="line"><span class="meta">... </span>        <span class="keyword">while</span> curr &lt; len(self.a):</span><br><span class="line"><span class="meta">... </span>            <span class="keyword">yield</span> self.a[curr]</span><br><span class="line"><span class="meta">... </span>            curr += <span class="number">1</span></span><br><span class="line"><span class="meta">... </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>my_object = MyClass(<span class="number">3</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> ele <span class="keyword">in</span> my_object:</span><br><span class="line"><span class="meta">... </span>    print(ele)</span><br><span class="line"><span class="meta">... </span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>Simply by implementing a <strong>__iter__()</strong>, we made our user-defined class supporting the most frequently used built-in syntax.</p>
+<p>Normally, your code should not call those special methods directly too often. Unless you&#39;re doing metaprogramming, you should be implementing those special methods much more often than invoking them explicitly. Perhaps the only special methods that you may call frequently is the <strong>__init__()</strong>, to invoke the initializer of a superclass in your own <strong>__init__()</strong> implementation.</p>
+<p>If you want to use a special method, it is recommended that call them by calling the built-in functions (e.g, <strong>len, iter, str</strong>, etc). There functions does the job you want them to do, normally with some extra benefits. And for some built-in class, they can be faster (like the <strong>len()</strong> we introduced just now).</p>
+<p>Besides, please avoid adding custom special methods arbitrarily. The name like <strong>__foo()__</strong> may haven&#39;t been occupied now, but who knows about the future?</p>
+<h2 id="121-emulating-numeric-types"><a href="#1-2-1-Emulating-Numeric-Types" class="headerlink" title="1.2.1 Emulating Numeric Types"></a>1.2.1 Emulating Numeric Types</h2><p>Several special methods allow user object to respond to operators such as +. We&#39;ll go through a simple example to see how special methods works.</p>
+<p>We&#39;ll implement a class to represent two-dimensional vectors (and more dimensions in the future). The built-in <strong>complex</strong> type can be used to represent two dimensional vectors, but when talking about more dimensions, we&#39;ll need our own class, and we want them to support built-in operators. Here&#39;re how we do it.</p>
+<p>We will start by designing the API for such a class by writing a simulated console session that we use later as a doctest. Here&#39;s what we want.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = Vector(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = Vector(<span class="number">2</span>, <span class="number">1</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a + b</span><br><span class="line">Vector(<span class="number">3</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<p>The <strong>abs</strong> built-in function returns the absolute value of integers and floats, and magnitude of <strong>complex</strong> numbers. So to be consistent, our API should use <strong>abs</strong> to calculate the magnitude of a vector:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>v = Vector(<span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>abs(v)</span><br><span class="line"><span class="number">5.0</span></span><br></pre></td></tr></table></figure>
+<p>And also the * operator for scalar multiplication (Notice, this is not a dot multiplication for two vectors)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>v * <span class="number">3</span></span><br><span class="line">Vector(<span class="number">9</span>, <span class="number">12</span>)</span><br></pre></td></tr></table></figure>
+<p>Also notice that, the printed information is under user definition. It&#39;s pretty simple to make it, just implement a special method called <strong>__repr__()</strong>.</p>
+<p>So, all in all, in order to make all the functions above work, the special methods we need to implement are: <strong>__repr__(), __abs__(), __add__()</strong>, and  <strong>__mul__()</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Vector</span>:</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x=<span class="number">0</span>, y=<span class="number">0</span>)</span>:</span></span><br><span class="line">        self.x = x</span><br><span class="line">        self.y = y</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__repr__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Vector(%r, %r)"</span> % (self.x, self.y)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__abs__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> hypot(self.x, self.y)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__bool__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> bool(abs(self))</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__add__</span><span class="params">(self, other)</span>:</span></span><br><span class="line">        x = self.x + other.x</span><br><span class="line">        y = self.y + other.y</span><br><span class="line">        <span class="keyword">return</span> Vector(x, y)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__mul__</span><span class="params">(self, scalar)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> Vector(self.x * scalar, self.y * scalar)</span><br></pre></td></tr></table></figure>
+<p>Although there 6 special methods in the code, but none of them will be invoked by in it&#39;s own code( except for <strong>__init__()</strong>). Even some other code may want to use these methods, they don&#39;t explicitly call them, just like what we can see in the console listings. Then let&#39;s discuss the code for each special method.</p>
+<h3 id="122-string-representation"><a href="#1-2-2-String-representation" class="headerlink" title="1.2.2 String representation."></a>1.2.2 String representation.</h3><p>The <strong>__repr__()</strong> is called by the <strong>repr</strong> built-in to get the string presentation of the instance for inspection. If we didn&#39;t implement it, the string returned would look like something like this:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>Vector(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">&lt;Vector object at <span class="number">0x10e380400</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>The string returned by <strong>__repr__()</strong> should be unambiguous, and, if possible, match the source code necessary to re-create the object being represented. This is why the our <strong>__repr__()</strong> would return a string looks calling the constructor of the class.</p>
+<p>There&#39;s a similar special method called <strong>__str__()</strong>, which is called by the <strong>str()</strong> constructor and implicitly used by the print function. Basically, <strong>__str__()</strong> should return a string suitable for display to end users.</p>
+<p>When you only implement one of the both, implement <strong>__repr__()</strong>, because Python will call <strong>__repr__()</strong> when <strong>__str__()</strong> is not available as a fallback.</p>
+<h3 id="123-arithmetic-operators"><a href="#1-2-3-Arithmetic-Operators" class="headerlink" title="1.2.3 Arithmetic Operators"></a>1.2.3 Arithmetic Operators</h3><p>We&#39;ve already seen how to implement our own + and <em> by implementing <strong>__add__</strong> and <em>*__mul__</em></em>. Note that, in both cases, the original object is not changed, and the method returned a new instance of the class. The principal of infix operators is to create new objects and leave the parameters untouched.</p>
+<h3 id="124-boolean-value-of-a-custom-type"><a href="#1-2-4-Boolean-Value-of-a-Custom-Type" class="headerlink" title="1.2.4 Boolean Value of a Custom Type"></a>1.2.4 Boolean Value of a Custom Type</h3><p>Although we have boolean type in Python, almost any object can be applied to a boolean context, such as a expression controlled by <strong>if</strong> or <strong>while</strong>. To do so, python will call <strong>bool(x)</strong>, and it only returns either <strong>True</strong> or <strong>False</strong>.</p>
+<p>By default, an instance of our self-defined class is always <strong>True</strong>, unless we implemented the <strong>__bool__</strong> or <strong>__len__</strong>. <strong>bool(x)</strong> basically calls <strong>x.__bool__()</strong> and returns the result. If it&#39;s not implemented, Python would try to invoke <strong>x.__len__()</strong> instead. If it returns 0, then <strong>False</strong>; Otherwise, <strong>True</strong>.</p>
+<h3 id="more-special-methods"><a href="#More-Special-Methods" class="headerlink" title="More Special Methods."></a>More Special Methods.</h3><p>The special methods are list in <a href="https://docs.python.org/3/reference/datamodel.html#specialnames" target="_blank" rel="noopener">Python official site</a>. Check them!</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Engineer/" rel="tag"># Engineer</a>
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+            <a href="/tags/Programming/" rel="tag"># Programming</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/28/python1/" rel="next" title="Data Model in Python">
+                <i class="fa fa-chevron-left"></i> Data Model in Python
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/31/kick/" rel="prev" title="Kick Start2019 Round A Question A. Training">
+                Kick Start2019 Round A Question A. Training <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Zhao Fengbo</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/JOHNKYON" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:zhaofengbo1321@gmail.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#12-how-to-use-special-methods"><span class="nav-text">1.2 How to Use Special Methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#121-emulating-numeric-types"><span class="nav-text">1.2.1 Emulating Numeric Types</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#122-string-representation"><span class="nav-text">1.2.2 String representation.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#123-arithmetic-operators"><span class="nav-text">1.2.3 Arithmetic Operators</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#124-boolean-value-of-a-custom-type"><span class="nav-text">1.2.4 Boolean Value of a Custom Type</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#more-special-methods"><span class="nav-text">More Special Methods.</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate"> 
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhao Fengbo</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.0.6</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.6"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.6"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.6"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.6"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.6"></script>
+
+
+
+  
+
+  
+    <script id="dsq-count-scr" src="https://johnkyon-blog.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'https://johnkyon.github.io/2018/12/06/python2/';
+        this.page.identifier = '2018/12/06/python2/';
+        this.page.title = 'Data Model, Special Methods';
+      };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://johnkyon-blog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
+  
+
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

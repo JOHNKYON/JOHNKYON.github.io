@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.6" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.6">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.6">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.6">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.6" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.0.6',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Before Reading这篇文章紧跟上一篇文章，主要通过作者自身经历和理解，论述如何进行求职的前期准备和实战。同样，此文将包含极强的采样误差和主观感情色彩，希望读者理解。 Hard Skill, Soft Skill此文的每一章节都将分为两个部分叙述，分别是Hard Skill（可以量化的部分）和Soft Skill(无法量化或很难量化的部分)。 虽然因为大多数公司都把公司文化拔高到了一个不应">
+<meta name="keywords" content="Chinese,Leetcode,Job Hunting">
+<meta property="og:type" content="article">
+<meta property="og:title" content="东京码农求职记(准备与面试)">
+<meta property="og:url" content="https://johnkyon.github.io/2019/05/11/job-hunting-Tokyo2/index.html">
+<meta property="og:site_name" content="Zhao&#39;s Notebook">
+<meta property="og:description" content="Before Reading这篇文章紧跟上一篇文章，主要通过作者自身经历和理解，论述如何进行求职的前期准备和实战。同样，此文将包含极强的采样误差和主观感情色彩，希望读者理解。 Hard Skill, Soft Skill此文的每一章节都将分为两个部分叙述，分别是Hard Skill（可以量化的部分）和Soft Skill(无法量化或很难量化的部分)。 虽然因为大多数公司都把公司文化拔高到了一个不应">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://johnkyon.github.io/images/jobhunt/leetcode0.png">
+<meta property="og:image" content="https://johnkyon.github.io/images/jobhunt/leetcode3.png">
+<meta property="og:image" content="https://johnkyon.github.io/images/jobhunt/leetcode1.png">
+<meta property="og:image" content="https://johnkyon.github.io/images/jobhunt/leetcode2.png">
+<meta property="og:updated_time" content="2020-07-14T08:25:17.907Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="东京码农求职记(准备与面试)">
+<meta name="twitter:description" content="Before Reading这篇文章紧跟上一篇文章，主要通过作者自身经历和理解，论述如何进行求职的前期准备和实战。同样，此文将包含极强的采样误差和主观感情色彩，希望读者理解。 Hard Skill, Soft Skill此文的每一章节都将分为两个部分叙述，分别是Hard Skill（可以量化的部分）和Soft Skill(无法量化或很难量化的部分)。 虽然因为大多数公司都把公司文化拔高到了一个不应">
+<meta name="twitter:image" content="https://johnkyon.github.io/images/jobhunt/leetcode0.png">
+
+
+
+
+
+
+  <link rel="canonical" href="https://johnkyon.github.io/2019/05/11/job-hunting-Tokyo2/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>东京码农求职记(准备与面试) | Zhao's Notebook</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119185454-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-119185454-1');
+</script>
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> 
+
+<div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zhao's Notebook</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Computer Science, Math, and >>></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+          
+  <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+</li>
+
+      
+
+      
+    </ul>
+  
+
+  
+    
+
+    
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+    
+
+  
+
+
+  
+
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://johnkyon.github.io/2019/05/11/job-hunting-Tokyo2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhao Fengbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zhao's Notebook">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">东京码农求职记(准备与面试)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-11T00:39:45+09:00">2019-05-11</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Engineer/" itemprop="url" rel="index"><span itemprop="name">Engineer</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/05/11/job-hunting-Tokyo2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2019/05/11/job-hunting-Tokyo2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="before-reading"><a href="#Before-Reading" class="headerlink" title="Before Reading"></a>Before Reading</h2><p>这篇文章紧跟上一篇文章，主要通过作者自身经历和理解，论述如何进行求职的前期准备和实战。同样，此文将包含极强的采样误差和主观感情色彩，希望读者理解。</p>
+<h2 id="hard-skill-soft-skill"><a href="#Hard-Skill-Soft-Skill" class="headerlink" title="Hard Skill, Soft Skill"></a>Hard Skill, Soft Skill</h2><p>此文的每一章节都将分为两个部分叙述，分别是Hard Skill（可以量化的部分）和Soft Skill(无法量化或很难量化的部分)。</p>
+<p>虽然因为大多数公司都把公司文化拔高到了一个不应该的高度，甚至有把公司文化道德化的倾向，导致我非常反感宣传公司文化的行为。但是我也不得不承认，有的公司文化，如果你抛却它忽悠员工的部分，它可以是非常有用的尺子，用来指导你和他人的工作。这里我推荐Amazon的<a href="https://www.amazon.jobs/en/principles" target="_blank" rel="noopener">Leadership Principles</a>。这里面有一些莫名其妙的自大狂玩意儿（比如Are Right, A Lot)，但是其他可以主观实施和控制的部分，是许多顶级公司对员工共同的要求，可以用来指导自己准备求职过程的方方面面。</p>
+<p>举个小例子，许多人提到了日本总体环境佛系，想准备什么东西都没有人做。其他人都不做，你觉得这是对的，你去做了，这就是&quot;Have backbones&quot;，&quot;Bias for Action&quot;和&quot;Think Big&quot;。如果你能够影响、组织起其他人跟你一起做，这就是&quot;Earn Trust&quot;, &quot;Ownership&quot;和&quot;Hire and Develop the Best&quot;。听起来很傻，但是这是一个优秀的码农应有的素质，也是你在简历中可以，甚至说是应该体现的素质，在面试的时候，这也是非常好的话题。</p>
+<h2 id="information-hunter"><a href="#Information-Hunter" class="headerlink" title="Information Hunter"></a>Information Hunter</h2><blockquote>
+<p>Drowning in information, starving for knowledge.</p>
+</blockquote>
+<p>就职的第一步，是获得信息，包括招聘信息，宣讲会，招聘时间表，过去问，具体公司的招聘流程，招聘时间线，招聘流程。虽然大多数日企都服从经团联的安排，一般从毕业前一年的3月开始招聘，但是码农的Dream Company普遍是不管的。这也导致码农就活的战线会拉的非常的长，以我个人的经验而言，我从投出第一份简历到拿到目前最好的offer (Amazon SDE)，中间间隔了8个月，而Indeed 和Google都还在流程中。在如此长期的战线中，如何尽可能及时准确地获得信息就成了一大难题。</p>
+<h3 id="hard"><a href="#Hard" class="headerlink" title="Hard"></a>Hard</h3><p>招聘信息最直接、及时、准确的来源肯定是各大公司官网。提前锁定自己心仪公司的网站，设置Job Alert，并且定期查看是最万无一失的方法（点名批评Microsoft, college 招聘页面曾经完全down掉了两个月之久）。</p>
+<p>除了各大公司的招聘官网，一下这些网站都有能够较为即使准确地获得招聘信息(包括招聘会和招聘投递信息)：<br><a href="https://acaric.jp/" target="_blank" rel="noopener">アカリク</a>;<br><a href="https://job.rikunabi.com/2020/" target="_blank" rel="noopener">リクナビ</a>(注意这个网站是分年度的，要选择自己对应的毕业年度);<br><a href="https://gaishishukatsu.com/" target="_blank" rel="noopener">外資就活</a>;<br><a href="https://www.careercross.com/en" target="_blank" rel="noopener">CareerCross</a>;<br><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></p>
+<h3 id="soft"><a href="#Soft" class="headerlink" title="Soft"></a>Soft</h3><p>建立你的信息网络。找到那些和你想法类似的人，主动和他们建立联系和共享信息。(Tip:收获信息的最好方式是主动提供信息)</p>
+<p>如何找到这些人？上同一门课认识的人，留学生群，参加招聘会结识的人。只要你主动地说Hi,主动地分享你有的信息，那么信息网络的建成只不过是水到渠成了。</p>
+<h2 id="resumes"><a href="#Resumes" class="headerlink" title="Resumes"></a>Resumes</h2><p>了解到了招聘岗位之后，我们就要开始投递了。投递的第一步就是准备自己的简历。不要等到临投前一天才开始写简历，今天就开始写。写简历是一个不停地改进的过程，也是审视自己的不足的过程。日本留学一个不太好的部分就是，因为实习机会太少，而周围很多人都是每天吃喝玩乐，很多学生凑不出一整页的简历。如果你也是其中一员，那么抓紧时间，多做一些项目，做一些实习，打一些比赛，发一些论文，无论如何也要凑出一整页简历来。</p>
+<p>虽然许多日企是给一个entry sheet让你填，但是填的内容和你的简历内容大同小异。而且top tier 的公司基本都是要直接收CV。</p>
+<p>建议去<a href="https://www.1point3acres.com/bbs/" target="_blank" rel="noopener">一亩三分地</a>看看如何准备和写简历。</p>
+<h3 id="hard"><a href="#Hard-1" class="headerlink" title="Hard"></a>Hard</h3><p>哪些东西可以写进简历：教育经历，实习项目，开源项目，自己的side project，比赛项目，等等。</p>
+<p>简历最好用中英日文各写一份，这样在复制粘贴到entry sheet的时候不用重复写（很多公司的ES在提交之后就不能看到了，我一开始不知道，至少写了3遍实习项目的日文版）。</p>
+<p>虽说每份简历在投递前最好是有针对性的修改，但是对于大部分根本写不满一页的学生来说，有时间想简历怎么编，不如赶紧再去做个项目。对于能够写出一页半简历的同学来说，可以在每次投递前针对自己投递的岗位删掉一些不太契合这一岗位的项目的细节，始终保持简历上有所有的项目，重点项目重点说，而且简历长度刚好一页。</p>
+<p>推荐通过<a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>初步编写自己的简历，还可以在LinkedIn上查看、学习其他人是如何编写自己的项目经历的。在出最终简历的时候，推荐使用<a href="https://www.wondercv.com/?locale=zh-CN" target="_blank" rel="noopener">超级简历</a>，跟着它的引导调整自己简历的内容和排版。</p>
+<h3 id="soft"><a href="#Soft-1" class="headerlink" title="Soft"></a>Soft</h3><p>同一个项目用不同的说法写出来，效果是完全不一样的。要针对性的表达你在项目中的作用。同时，为了能够在项目中有东西可说，应当在做项目之前和做项目中就想好它会在我的简历中怎样展现出来，一边意识到简历一边推进项目有奇效。</p>
+<p>同时我发现有的转行的同学，误认为项目就是在GitHub 上找个开源项目实现一下，或者就是上了某个网课，做了课设作业。不是说这些就不行，而是这些项目缺乏区分度，不能体现你作为candidate拥有的竞争力。</p>
+<p>相对于课设，实习经历，比赛经历和对开源社区的贡献就明显有更强的竞争力，这些经历可以说是实际工作的预演，是采用了某种技术解决了某个实际问题的过程。好消息是日本有这些经历的人真的不多，坏消息是还是比好的岗位数量多得多的。</p>
+<h2 id="online-assessment"><a href="#Online-Assessment" class="headerlink" title="Online Assessment"></a>Online Assessment</h2><h3 id="hard"><a href="#Hard-2" class="headerlink" title="Hard"></a>Hard</h3><p>普遍是编码测试，建议在C++, Java和 Python中至少弄懂一门语言。如果你只会Python，那建议还是要学一学C++或者Java，因为Amazon东京 OA 只许用C++或者Java。</p>
+<h3 id="soft"><a href="#Soft-2" class="headerlink" title="Soft"></a>Soft</h3><p>没有，即使有，也很弱智。我还没见过招码农还要求做SPI的公司。</p>
+<h2 id="interviews"><a href="#Interviews" class="headerlink" title="Interviews"></a>Interviews</h2><p>面试是整个招聘流程中最大的大头，而且top tier的面试强度是非常高的，Amazon一上午面4轮，Google听说也是一天面4轮。虽然一般认为面试并不能在如此短的时间里体现一个人的水平和性格，但是面试总归是比简历靠谱的。准备美资互联网公司的方法也十分简单和直接，相当多早就有志于此的朋友可能对于他们考察方法早已烂熟于胸，但是也要考虑到很多日本的留学生根本没有关注过这方面的情况，我还是决定写一写具体的面试内容和准备方法。</p>
+<p>推荐参考书目：《剑指offer》和《Cracking the Coding Interview》。前者是中文编写，篇幅更短小，适合完全没有外企面试经验的同学熟悉面试流程和面试重点。后者是英文编写，更详细，篇幅更长，适合有一定准备的同学阅读，熟悉一些术语的英语说法和更多面试中的细节。</p>
+<p>推荐论坛：<a href="https://www.1point3acres.com/bbs/" target="_blank" rel="noopener">一亩三分地</a>。不仅有最新最全面经，还有装逼，打脸，互怼，感情生活，北美猥琐男等愉悦身心的顶级资讯，实乃居家旅行，刷题拿offer必备网站。</p>
+<p>建议找一两个朋友定期互相做mock interview,可以习惯一边说话一边写代码，同时习惯在白板上写代码，还可以互相给feedback来提升面试过程的表现。</p>
+<h3 id="hard-skill"><a href="#Hard-Skill" class="headerlink" title="Hard Skill"></a>Hard Skill</h3><p>Top tier公司都是要白板编程的，有的公司除了白板编程之外还有一些Behavior Question(BQ).白板编程主要考察算法和数据结构，new grad偶尔会问一些简单的 OOD(Object Oriented Design)问题。</p>
+<h4 id="算法和数据结构"><a href="#算法和数据结构" class="headerlink" title="算法和数据结构"></a>算法和数据结构</h4><blockquote>
+<p>究竟是我刷了题，还是题刷了我？</p>
+</blockquote>
+<p>刷题进公司一直是一个充满争议的话题，但是不得不承认，想要进top tier公司，对于大部分人来说，刷题是最有效的途径。这里给出我的刷题记录以供参考（我本人没有任何算法竞赛的经验）。</p>
+<p><img src="/images/jobhunt/leetcode0.png" alt="刷题提交记录"></p>
+<center>刷题提交记录</center>
+
+<p><img src="/images/jobhunt/leetcode3.png" alt="总题数"></p>
+<center>总题数</center>
+
+<p><img src="/images/jobhunt/leetcode1.png" alt="周赛全球排名"></p>
+<center>周赛全球排名</center>
+
+<p><img src="/images/jobhunt/leetcode2.png" alt="Amazon面试前一周的周赛排名"></p>
+<center>Amazon面试前一周的周赛排名</center>
+
+<p>对于没有竞赛基础的同学来说，在刚开始刷题的时候会感受到痛苦，这是十分正常的，事实上，大部分人在做到150题左右，就会开始量变到质变。</p>
+<p>在刷了一定数量的题之后，如果想要知道自己大概是个什么水平，可以参加 Leetcode 每周的周赛，日本时间周日早上11：30至13：00。周赛是个很好的检验自己水平的地方，同时也是个获得自信的好地方，因为大多数参赛选手实在是菜的可怕。</p>
+<p>注意：并不是说刷到这个数才能进这些公司，实际上我是刷了大量的无用功的，因为我刷到一半有点刷上瘾了，觉得做这些算法题是一件很快乐的事，没事干做两道，还因此荒废了研究。。。现在我觉得 leetcode 没太大意思，又跑去做 Hackerrank 玩，纯粹是出于个人兴趣才做了这么多。</p>
+<h4 id="ood"><a href="#OOD" class="headerlink" title="OOD"></a>OOD</h4><p>《Cracking the Coding Interview》和<a href="https://www.1point3acres.com/bbs/" target="_blank" rel="noopener">一亩三分地</a>里有很多OOD的例子，但是实话实说，遇到做过的才会，遇到没做过的还是挺蒙的。。。好在OOD并没有一个标准答案，你只要和面试官探讨出一个make sense的方案就行了。</p>
+<h4 id="behavior-questions"><a href="#Behavior-Questions" class="headerlink" title="Behavior Questions"></a>Behavior Questions</h4><p>Amazon一定会有BQ，面试之前照着<a href="https://www.amazon.jobs/en/principles" target="_blank" rel="noopener">Leadership Principles</a>准备一些小故事。Google有可能有BQ，但是概率实在是很低。</p>
+<h3 id="soft-skill"><a href="#Soft-Skill" class="headerlink" title="Soft Skill"></a>Soft Skill</h3><p>不同公司会对面试官进行不同的训练，要求他们重视候选人的某些方面。但是总的来说，大多数面试官评价候选者的一个很重要标准是，他是否愿意和候选者作为同事共事。因此面试很大程度上，是模拟你和面试官在工作中共同解决一个问题，想象他是你的一个同事，抱着和同事交流的心态和态度去沟通，比较容易做到不卑不亢。</p>
+<h4 id="自信"><a href="#自信" class="headerlink" title="自信"></a>自信</h4><p>我自己有幸有过当面试官的经验，后来和许多其他的工程师聊的时候，发现大多数工程师都或多或少当过面试官。所以面试官其实很有可能就是一个普通的码农，面试的时候完全没有害怕的必要。</p>
+<p>其次，不自信在面试的时候绝对是红灯信号，背后的理由也很简单：如果你自己都不相信自己可以胜任这份工作，那么你如何说服你的面试官相信你？</p>
+<p>当然也要注意分清自信和自负的区别。你可以是一个geek，对自己的技术充满自信，但你不能是一个jerk，目空一切，一碰就炸，没人想要和jerk共事。如果你可以笑着和面试官讲一个你以前的经历中犯过的错，就像谈论自己小时候的一段逸闻一样，那么你已经展露出了充分的自信。当然，你也要记得讲自己是如何处理这个错的，获得了怎样的效果，毕竟这还是在面试中。</p>
+<h4 id="交流能力"><a href="#交流能力" class="headerlink" title="交流能力"></a>交流能力</h4><p>许多面试题都是模糊的，不明确的，并不是因为这个题有问题，而是面试官有意考察你在工作中的沟通能力。在听到一个问题之后，尽可能的问出一切你认为可能的问题，包括但不限于：输入是否遵循某种pattern(例如一个数组是否是排好序的数组)，如何处理非法的输入(包括空的输入和会overflow的输入)，如果要实现多个互相影响的功能，那么他们被调用的次数分别是怎样的（这会严重影响你对于整个类的设计）。</p>
+<p>同时，在整个思考过程中，尽量做到think aloud,把你的任何一点想法都说出来和面试官讨论，如果面试官没有提出异议，那说明你的思路是没有大的问题。同样，如果面试官明确表达了不同意，不要在自己的思路上纠结。谁对谁错不一定，但是面试官会认为你不能听取他人意见，沟通能力差。</p>
+<p>有些朋友表达了对自己语言能力的担忧，我认为其实对于大部分人来说，对英语水平的担忧完全是杞人忧天。语言只是交流的工具，只要达到了可以沟通的水平就可以了。Google Tokyo Search Team在 tech talk上开玩笑地说&quot;The official language here is non-native English&quot;。如果在沟通过程中有没听明白的部分，完全可以&quot;I beg your pardon&quot;或者自己复述一遍面试官的话，询问自己是否理解正确了。</p>
+<h4 id="与公司文化的契合程度"><a href="#与公司文化的契合程度" class="headerlink" title="与公司文化的契合程度"></a>与公司文化的契合程度</h4><p>许多公司会挑选契合公司文化的雇员，有的公司明确的给出了公司文化的要求，而有的公司隐藏的很深。面试的时候，面试者可以大概感受到公司的氛围。</p>
+<p>我个人的建议是，不要在面试的时候过度的伪装自己，因为求职是一个双向选择的过程，如果你去到了一个你无法适应的工作环境中，你的接下来几年都会相当的痛苦：你清醒的时间里大约有一半都在工作上，而你却不喜欢它。</p>
+<p>但是也有一些技巧可以帮助你扬长避短，体现你符合公司文化，或者说展现你的优势。例如，大多数情况下，合作项目中总会有那么几个摸鱼侠。如果你是个好好先生，容忍了摸鱼侠的存在，那么你就可以着重表达自己“Earn Trust”的部分，你的组员都相信你，或者说，至少你们没有撕破脸。如果你无法忍受摸鱼侠，和他们大吵一架并且把他们赶走了，你可以着重表达自己“Hire and Develop the Best”和“Insist on the Highest Standard”。当然你要注意自己的表达，不要让自己听起来像个自负的jerk。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>找工作是一个小马过河的问题，最后的最后，我依旧想要强调，这两篇文章仅仅代表我个人的经验和看法，完全不保证客观性，准确性和及时性。这两篇文章仅作抛砖引玉，希望能给各位学弟学妹提供一点点微小的帮助，同时也希望其他看到这篇博客，有自己想法的朋友，也能够通过各种渠道发声。After all, the community is you and me and everyone.</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Chinese/" rel="tag"># Chinese</a>
+          
+            <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+          
+            <a href="/tags/Job-Hunting/" rel="tag"># Job Hunting</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/06/job-hunting-Tokyo/" rel="next" title="东京码农求职记">
+                <i class="fa fa-chevron-left"></i> 东京码农求职记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/14/multiThread/" rel="prev" title="ArrayBlockingQueue in Java">
+                ArrayBlockingQueue in Java <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Zhao Fengbo</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/JOHNKYON" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:zhaofengbo1321@gmail.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#before-reading"><span class="nav-text">Before Reading</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hard-skill-soft-skill"><span class="nav-text">Hard Skill, Soft Skill</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#information-hunter"><span class="nav-text">Information Hunter</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hard"><span class="nav-text">Hard</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#soft"><span class="nav-text">Soft</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#resumes"><span class="nav-text">Resumes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hard"><span class="nav-text">Hard</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#soft"><span class="nav-text">Soft</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#online-assessment"><span class="nav-text">Online Assessment</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hard"><span class="nav-text">Hard</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#soft"><span class="nav-text">Soft</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#interviews"><span class="nav-text">Interviews</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hard-skill"><span class="nav-text">Hard Skill</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法和数据结构"><span class="nav-text">算法和数据结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ood"><span class="nav-text">OOD</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#behavior-questions"><span class="nav-text">Behavior Questions</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#soft-skill"><span class="nav-text">Soft Skill</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#自信"><span class="nav-text">自信</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#交流能力"><span class="nav-text">交流能力</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#与公司文化的契合程度"><span class="nav-text">与公司文化的契合程度</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后"><span class="nav-text">最后</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate"> 
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhao Fengbo</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.0.6</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.6"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.6"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.6"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.6"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.6"></script>
+
+
+
+  
+
+  
+    <script id="dsq-count-scr" src="https://johnkyon-blog.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'https://johnkyon.github.io/2019/05/11/job-hunting-Tokyo2/';
+        this.page.identifier = '2019/05/11/job-hunting-Tokyo2/';
+        this.page.title = '东京码农求职记(准备与面试)';
+      };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://johnkyon-blog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
+  
+
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

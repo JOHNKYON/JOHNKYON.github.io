@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.6" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.6">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.6">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.6">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.6" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.0.6',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="This is a programming problem on leetcode, and the interesting part is, it can be solved with two different points ofview. We&amp;#39;re going to analyze the problem, prove some properties and lemma befor">
+<meta name="keywords" content="Algorithm,Leetcode,Graph Theory,Sequence Algorithm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Leetcode753. Cracking the safe">
+<meta property="og:url" content="https://johnkyon.github.io/2018/08/30/leetcode753/index.html">
+<meta property="og:site_name" content="Zhao&#39;s Notebook">
+<meta property="og:description" content="This is a programming problem on leetcode, and the interesting part is, it can be solved with two different points ofview. We&amp;#39;re going to analyze the problem, prove some properties and lemma befor">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://johnkyon.github.io/images/leetcode753_1.png">
+<meta property="og:image" content="https://johnkyon.github.io/images/leetcode753_2.png">
+<meta property="og:updated_time" content="2020-07-12T07:35:26.917Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Leetcode753. Cracking the safe">
+<meta name="twitter:description" content="This is a programming problem on leetcode, and the interesting part is, it can be solved with two different points ofview. We&amp;#39;re going to analyze the problem, prove some properties and lemma befor">
+<meta name="twitter:image" content="https://johnkyon.github.io/images/leetcode753_1.png">
+
+
+
+
+
+
+  <link rel="canonical" href="https://johnkyon.github.io/2018/08/30/leetcode753/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Leetcode753. Cracking the safe | Zhao's Notebook</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119185454-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-119185454-1');
+</script>
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> 
+
+<div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zhao's Notebook</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Computer Science, Math, and >>></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+          
+  <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+</li>
+
+      
+
+      
+    </ul>
+  
+
+  
+    
+
+    
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+    
+
+  
+
+
+  
+
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://johnkyon.github.io/2018/08/30/leetcode753/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhao Fengbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zhao's Notebook">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Leetcode753. Cracking the safe</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-30T22:16:49+09:00">2018-08-30</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/30/leetcode753/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/08/30/leetcode753/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>This is a programming problem on leetcode, and the interesting part is, it can be solved with two different points of<br>view. We&#39;re going to analyze the problem, prove some properties and lemma before we use them, at last write them into code.<br>The problem is as below:</p>
+<h2 id="leetcode753-cracking-the-safe"><a href="#Leetcode-753-Cracking-the-Safe" class="headerlink" title="Leetcode.753. Cracking the Safe"></a>Leetcode.753. Cracking the Safe</h2><p>There is a box protected by a password. The password is <strong>n</strong> digits, where each letter can be one of the first <strong>k</strong> digits <strong>0, 1, ..., k-1</strong>.</p>
+<p>You can keep inputting the password, the password will automatically be matched against the last <strong>n</strong> digits entered.</p>
+<p>For example, assuming the password is <strong>&quot;345&quot;</strong>, I can open it when I type <strong>&quot;012345&quot;</strong>, but I enter a total of 6 digits.</p>
+<p>Please return any string of minimum length that is guaranteed to open the box after the entire string is inputted.</p>
+<h2 id="approach-1-graph-theory"><a href="#Approach-1-Graph-Theory" class="headerlink" title="Approach #1: Graph Theory."></a>Approach #1: Graph Theory.</h2><p>It&#39;s easy to take this problem as a graph theory, Let&#39;s take any number with <strong>n-1</strong> digits as a vertex, to form a single and unique trial of the password, we extend a edge from this node, forming a <strong>n</strong> digits number. It also leads to the new node that was indicated by it&#39;s [1:n] digits. So this problem is turned in to a graph problem defined as below:</p>
+<p><em>Given a directed graph with $k^{n-1}$ nodes, each nodes has $k$ edges, pointed to another node. Find a path that visits every edges exactly once.</em></p>
+<p>Sounds familiar, right? This is a very classic question in graph theory, called <a href="https://en.wikipedia.org/wiki/Eulerian_path" target="_blank" rel="noopener">Eulerian path</a>. By definition, a Eulerian path is a trail in a finite graph which visits every edges exactly once. Eulerian cycle is an Eulerian path that starts and ends at the same vertex. Eulerian path and Eulerian cycle have following properties:</p>
+<ul>
+<li>An undirected graph has an Eulerian cycle if and only if every vertex has even degree, and all of its vertices with nonzero degree belong to a single connected component.</li>
+<li>A directed graph has an Eulerian cycle if and only if every vertex has equal in degree and out degree, and all of its vertices with nonzero degree belong to a single strongly connected component.</li>
+</ul>
+<p>Both properties are easy to prove: For the first property, for each node, it must have an edge in and an edge out, to form a Eulerian path. For the second property, it&#39;s still the same: for each node, one in, one out.</p>
+<p>To solve this problem, we have a theory called <em>Hierholzer&#39;s Algorithm</em>. The algorithm goes as follows:</p>
+<ul>
+<li>Starting from a vertex u, we walk through (unvisited) edges until we get stuck. Because the in-degrees and out-degrees of each node are equal, we can only get stuck at u, which forms a cycle.</li>
+<li>Now, for any node v we had visited that has unvisited edges, we start a new cycle from v with the same procedure as above, and then merge the cycles together to form a new cycle.</li>
+</ul>
+<p>An figure below may helps you to understand the procedure.<br><img src="/images/leetcode753_1.png" alt=""></p>
+<p>Now the problem seems easy to solve. All we need to do is track every edge and mark them as visited. To prevent us from getting stuck (So we don&#39;t need extra memory to store unvisited edges), we start from 000...0, and go to the next node from k-1 to 0. The code is as followed:</p>
+<p><em>java</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    Set&lt;String&gt; seen;</span><br><span class="line">    StringBuilder ans;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">crackSafe</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">1</span> &amp;&amp; k == <span class="number">1</span>) <span class="keyword">return</span> <span class="string">"0"</span>;</span><br><span class="line">        seen = <span class="keyword">new</span> HashSet();</span><br><span class="line">        ans = <span class="keyword">new</span> StringBuilder();</span><br><span class="line"></span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n-<span class="number">1</span>; ++i)</span><br><span class="line">            sb.append(<span class="string">"0"</span>);</span><br><span class="line">        String start = sb.toString();</span><br><span class="line"></span><br><span class="line">        dfs(start, k);</span><br><span class="line">        ans.append(start);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> String(ans);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dfs</span><span class="params">(String node, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> x = <span class="number">0</span>; x &lt; k; ++x) &#123;</span><br><span class="line">            String nei = node + x;</span><br><span class="line">            <span class="keyword">if</span> (!seen.contains(nei)) &#123;</span><br><span class="line">                seen.add(nei);</span><br><span class="line">                dfs(nei.substring(<span class="number">1</span>), k);</span><br><span class="line">                ans.append(x);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="approach-2-inverse-burrows-wheeler-transform"><a href="#Approach-2-Inverse-Burrows-Wheeler-Transform" class="headerlink" title="Approach #2: Inverse Burrows-Wheeler Transform"></a>Approach #2: Inverse Burrows-Wheeler Transform</h2><p>If we are familiar with the theory of combinatorics on words, recall that a Lyndon Word L is a word that is the unique minimum of it&#39;s rotations.</p>
+<p>One important mathematical result (due to Fredericksen and Maiorana), is that the concatenation in lexicographic order of Lyndon words with length dividing n, forms a de Bruijin sequence: a sequence where every every word (from the $k^n$​​ available) appears as a substring of length n (where we are allowed to wrap around.)</p>
+<p>For example, when n = 6, k = 2, all the Lyndon words with length dividing n in lexicographic order are (spaces for convenience): 0 000001 000011 000101 000111 001 001011 001101 001111 01 010111 011 011111 1. It turns out this is the smallest de Bruijin sequence.</p>
+<p>We can construct a de Bruijin sequence by Inverse Burrows-Wheeler Transform. Mathematically, an inverse Burrows—Wheeler transform on a word w generates a multi-set of equivalence classes consisting of strings and their rotations. These equivalence classes of strings each contain a Lyndon word as a unique minimum element, so the inverse Burrows—Wheeler transform can be considered to generate a set of Lyndon words. It can be shown that if we perform the inverse Burrows—Wheeler transform on a word w consisting of the size-k alphabet repeated $k^{n-1}$ times (so that it will produce a word the same length as the desired de Bruijn sequence), then the result will be the set of all Lyndon words whose length divides n. It follows that arranging these Lyndon words in lexicographic order will yield a de Bruijn sequence B(k,n), and that this will be the first de Bruijn sequence in lexicographic order. The following method can be used to perform the inverse Burrows—Wheeler transform, using its standard permutation:</p>
+<ul>
+<li>Sort the characters in the string w, yielding a new string w&#39;</li>
+<li>Position the string w&#39; above the string w, and map each letter&#39;s position in w&#39; to its position in w while preserving order. This process defines the standard permutation.</li>
+<li>Write this permutation in cycle notation with the smallest position in each cycle first, and the cycles sorted in increasing order.</li>
+<li>For each cycle, replace each number with the corresponding letter from string w&#39; in that position.</li>
+<li>Each cycle has now become a Lyndon word, and they are arranged in lexicographic order, so dropping the parentheses yields the first de Bruijn sequence.</li>
+</ul>
+<p>For example, to construct the smallest B(2,4) de Bruijn sequence of length 24 = 16, repeat the alphabet (ab) 8 times yielding w=abababababababab. Sort the characters in w, yielding w&#39;=aaaaaaaabbbbbbbb. Position w&#39; above w as shown, and map each element in w&#39; to the corresponding element in w by drawing a line. Number the columns as shown so we can read the cycles of the permutation:<br><img src="/images/leetcode753_2.png" alt=""></p>
+<p>Starting from the left, the cycles are: (1) (2 3 5 9) (4 7 13 10) (6 11) (8 15 14 12) (16).</p>
+<p>Then, replacing each number by the corresponding letter in w&#39; from that column yields: (a)(aaab)(aabb)(ab)(abbb)(b).</p>
+<p>These are all of the Lyndon words whose length divides 4, in lexicographic order, so dropping the parentheses gives B(2,4) = aaaabaabbababbbb.</p>
+<p>The code is as followed:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">crackSafe</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> M = (<span class="keyword">int</span>) Math.pow(k, n-<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">int</span>[] P = <span class="keyword">new</span> <span class="keyword">int</span>[M * k];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; ++i)</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> q = <span class="number">0</span>; q &lt; M; ++q)</span><br><span class="line">                P[i*M + q] = q*k + i;</span><br><span class="line"></span><br><span class="line">        StringBuilder ans = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; M*k; ++i) &#123;</span><br><span class="line">            <span class="keyword">int</span> j = i;</span><br><span class="line">            <span class="keyword">while</span> (P[j] &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">                ans.append(String.valueOf(j / M));</span><br><span class="line">                <span class="keyword">int</span> v = P[j];</span><br><span class="line">                P[j] = -<span class="number">1</span>;</span><br><span class="line">                j = v;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n-<span class="number">1</span>; ++i)</span><br><span class="line">            ans.append(<span class="string">"0"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> String(ans);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>The most attractive part is that, at the first look into this problem, this does not look like a graph problem or a description problem. However, we can use the method from two different aspect to help us understand the problem in different point of view. If we look deeper into it, we can even found that, description, text problems and graph theories are closely related to each other, which showed the beauty of math and computer science.</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
+          
+            <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+          
+            <a href="/tags/Graph-Theory/" rel="tag"># Graph Theory</a>
+          
+            <a href="/tags/Sequence-Algorithm/" rel="tag"># Sequence Algorithm</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/14/DP1/" rel="next" title="Dirichlet Process 1 - Bernoulli Process and Bayes Theorem">
+                <i class="fa fa-chevron-left"></i> Dirichlet Process 1 - Bernoulli Process and Bayes Theorem
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/28/python0/" rel="prev" title="Python, Deeper Understanding">
+                Python, Deeper Understanding <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Zhao Fengbo</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/JOHNKYON" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:zhaofengbo1321@gmail.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#leetcode753-cracking-the-safe"><span class="nav-text">Leetcode.753. Cracking the Safe</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#approach-1-graph-theory"><span class="nav-text">Approach #1: Graph Theory.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#approach-2-inverse-burrows-wheeler-transform"><span class="nav-text">Approach #2: Inverse Burrows-Wheeler Transform</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate"> 
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhao Fengbo</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.0.6</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.6"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.6"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.6"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.6"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.6"></script>
+
+
+
+  
+
+  
+    <script id="dsq-count-scr" src="https://johnkyon-blog.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'https://johnkyon.github.io/2018/08/30/leetcode753/';
+        this.page.identifier = '2018/08/30/leetcode753/';
+        this.page.title = 'Leetcode753. Cracking the safe';
+      };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://johnkyon-blog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
+  
+
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

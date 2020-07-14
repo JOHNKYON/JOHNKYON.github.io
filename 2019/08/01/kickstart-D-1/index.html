@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.6" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.6">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.6">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.6">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.6" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.0.6',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Problem LinkSee here. ProblemSteven has an array of N non-negative integers. The i-th integer (indexed starting from 0) in the array is Ai. Steven really likes sub-intervals of A that are xor-even. Fo">
+<meta name="keywords" content="Computer Science,Algorithm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="KickStart 2019 Round D Question A. X or What">
+<meta property="og:url" content="https://johnkyon.github.io/2019/08/01/kickstart-D-1/index.html">
+<meta property="og:site_name" content="Zhao&#39;s Notebook">
+<meta property="og:description" content="Problem LinkSee here. ProblemSteven has an array of N non-negative integers. The i-th integer (indexed starting from 0) in the array is Ai. Steven really likes sub-intervals of A that are xor-even. Fo">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://johnkyon.github.io/images/kick2019roundD/1.png">
+<meta property="og:image" content="https://johnkyon.github.io/images/kick2019roundD/2.png">
+<meta property="og:image" content="https://johnkyon.github.io/images/kick2019roundD/3.png">
+<meta property="og:updated_time" content="2020-07-14T08:25:17.907Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="KickStart 2019 Round D Question A. X or What">
+<meta name="twitter:description" content="Problem LinkSee here. ProblemSteven has an array of N non-negative integers. The i-th integer (indexed starting from 0) in the array is Ai. Steven really likes sub-intervals of A that are xor-even. Fo">
+<meta name="twitter:image" content="https://johnkyon.github.io/images/kick2019roundD/1.png">
+
+
+
+
+
+
+  <link rel="canonical" href="https://johnkyon.github.io/2019/08/01/kickstart-D-1/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>KickStart 2019 Round D Question A. X or What | Zhao's Notebook</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119185454-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-119185454-1');
+</script>
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> 
+
+<div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zhao's Notebook</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Computer Science, Math, and >>></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+          
+  <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+</li>
+
+      
+
+      
+    </ul>
+  
+
+  
+    
+
+    
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+    
+
+  
+
+
+  
+
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://johnkyon.github.io/2019/08/01/kickstart-D-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhao Fengbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zhao's Notebook">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">KickStart 2019 Round D Question A. X or What</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-01T16:04:05+09:00">2019-08-01</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/01/kickstart-D-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2019/08/01/kickstart-D-1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="problem-link"><a href="#Problem-Link" class="headerlink" title="Problem Link"></a>Problem Link</h2><p>See <a href="https://codingcompetitions.withgoogle.com/kickstart/round/0000000000051061/0000000000161426" target="_blank" rel="noopener">here</a>.</p>
+<h2 id="problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Steven has an array of N non-negative integers. The i-th integer (indexed starting from 0) in the array is Ai.</p>
+<p>Steven really likes sub-intervals of A that are xor-even. Formally, a sub-interval of A is a pair of indices (L, R), denoting the elements <script type="math/tex">A_L, A_{L+1}, ..., A_{R-1}, A_R</script> . The xor-sum of this sub-interval is <script type="math/tex">A_L</script> xor <script type="math/tex">A_{L+1}</script> xor ... xor <script type="math/tex">A_{R-1}</script> xor <script type="math/tex">A_R</script>, where xor is the bitwise exclusive or.</p>
+<p>A sub-interval is xor-even if its xor-sum has an even number of set bits in its binary representation.</p>
+<p>Steven would like to make Q modifications to the array. The i-th modification changes the $P_i$-th (indexed from 0) element to $V_i$. Steven would like to know, what is the size of the xor-even sub-interval of A with the most elements after each modification?</p>
+<h2 id="input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>The first line of the input gives the number of test cases, T. T test cases follow.</p>
+<p>Each test case starts with a line containing two integers N and Q, denoting the number of elements in Steven&#39;s array and the number of modifications, respectively.</p>
+<p>The second line contains N integers. The i-th of them gives $A_i$ indicating the i-th integer in Steven&#39;s array.</p>
+<p>Then, Q lines follow, describing the modifications. The i-th line contains $P_i$ and $V_i$, The i-th modification changes the $P_i$-th element to $V_i$. indicating that the i-th modification changes the $P_i$-th (indexed from 0) element to $V_i$.</p>
+<h2 id="output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>For each test case, output one line containing Case #x: y_1 y_2 ... y_Q, where x is the test case number (starting from 1) and y_i is the number of elements in the largest xor-even sub-interval of A after the i-th modification. If there are no xor-even sub-intervals, then output 0.</p>
+<h2 id="sample-input-and-output"><a href="#Sample-Input-and-Output" class="headerlink" title="Sample Input and Output"></a>Sample Input and Output</h2><p>Input<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">4 3</span><br><span class="line">10 21 3 7</span><br><span class="line">1 13</span><br><span class="line">0 32</span><br><span class="line">2 22</span><br><span class="line">5 1</span><br><span class="line">14 1 15 20 26</span><br><span class="line">4 26</span><br></pre></td></tr></table></figure></p>
+<p>Output<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Case #1: 4 3 4</span><br><span class="line">Case #2: 4</span><br></pre></td></tr></table></figure></p>
+<h2 id="solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>This is a problem that we can tear it apart into two sub-problems, how to determine if a number has even or odd 1s in its bits, and how to find the longest subarray. Let&#39;s do it one by one.</p>
+<h3 id="how-to-determine-if-a-number-has-even-or-odd-1s-in-its-bits"><a href="#How-to-determine-if-a-number-has-even-or-odd-1s-in-its-bits" class="headerlink" title="How to determine if a number has even or odd 1s in its bits?"></a>How to determine if a number has even or odd 1s in its bits?</h3><p>This one looks simple, while it can also be pretty tricky. Let&#39;s start from the most naive one.</p>
+<h4 id="naive"><a href="#Naive" class="headerlink" title="Naive"></a>Naive</h4><p>Naively compare every bits and count them, see if there&#39;s even of them.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">evenOnes</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span> (n != <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> ((n &amp; <span class="number">1</span>) == <span class="number">1</span>) &#123;</span><br><span class="line">      count++;</span><br><span class="line">    &#125;</span><br><span class="line">    n &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> (count &amp; <span class="number">1</span>) == <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="a-small-improve"><a href="#A-small-improve" class="headerlink" title="A small improve"></a>A small improve</h4><p>We have noticed that this require $k$ times of comparisons, while $k$ denotes the number of bits of the integer. In Java 8, $k = 32$.</p>
+<p>Can we improve it a little bit? Here a method that allow us to compare exactly $a$ times, while $a$ denotes the total number of 1 in $n$&#39;s bits presentation. Here&#39;s how we do it:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">evenOnes</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span> (n!=<span class="number">0</span>) &#123;</span><br><span class="line">    n &amp;= n-<span class="number">1</span>;</span><br><span class="line">    count++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> (count &amp; <span class="number">1</span>) == <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>How did this work? Take a look at the figure.</p>
+<p><img src="/images/kick2019roundD/1.png" alt="Figure 1"></p>
+<p>Say we split the binary representation of the integer n into two parts, <strong>b</strong> denotes from the first <strong>1</strong> to the lowest bit, and <strong>a</strong> for the rest.</p>
+<p>For $n-1$, we can see that <strong>a</strong> part stayed the same and every bits get flipped in <strong>b</strong> part, thus the &amp; operation between will keep everything in <strong>a</strong> the same, and turn every bits in <strong>b</strong> into <strong>0</strong>. As a result, we erased the first <strong>1</strong> in $n$, from the lowest bit to highest. The loop terminates until $n = 0$, which indicates that all <strong>1</strong> have been erased from $n$. Counting the time of the loop, would be the number of <strong>1</strong>s in n.</p>
+<h4 id="can-we-do-even-better"><a href="#Can-we-do-even-better" class="headerlink" title="Can we do even better?"></a>Can we do even better?</h4><p>Yes we can, but to be strictly correct, we cannot actually call this better under all circumstance (Imagine if the n is 0, can we actually do it any better?). The fact is we can do this by do five comparison under all circumstance, thus for any $n$ that has more than five <strong>1</strong>s, it&#39;s better, other than that, it&#39;s actually worse.</p>
+<p>But we&#39;re presenting the method anyway, because, firstly, the method is tricky and interesting, and secondly, in practice, this method is stable, especially for input that has a lot of <strong>1</strong>, it&#39;s much faster.</p>
+<p>Here&#39;s the code, and it&#39;s pretty simple.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">evenOnes</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">  x ^= x &gt;&gt; <span class="number">1</span>;</span><br><span class="line">  x ^= x &gt;&gt; <span class="number">2</span>;</span><br><span class="line">  x ^= x &gt;&gt; <span class="number">4</span>;</span><br><span class="line">  x ^= x &gt;&gt; <span class="number">8</span>;</span><br><span class="line">  x ^= x &gt;&gt; <span class="number">16</span>;</span><br><span class="line">  <span class="keyword">return</span> (x&amp;<span class="number">1</span>) == <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Now, here&#39;s the tricky part, let&#39;s start from the first comparison: <code>x ^= x &gt;&gt; 1</code></p>
+<p><img src="/images/kick2019roundD/2.png" alt="Figure 2"></p>
+<p>See from the figure, and concentrate on the i-th bit. Under what circumstance would the i-th bit be <strong>1</strong> ? The answer is there&#39;s only one <strong>1</strong> at the i-th and (i+1)-th bit in x. Which means, if the result bit at the i-th bit is <strong>1</strong>, that indicates there are <strong>odd</strong> number of <strong>1</strong>s between the i-th and the (i+1)-th bits, and vice versa.</p>
+<p>Now let&#39;s take a look at the second comparison: <code>x ^= x &gt;&gt; 2;</code>, which can be indicated by the figure below:</p>
+<p><img src="/images/kick2019roundD/3.png" alt="Figure 2"></p>
+<p>Now remember the <code>x</code> is the <code>x</code> after the first comparison, which means the i-th bit, <strong>a</strong> indicates whether there&#39;re odd number of <strong>1</strong> in the i-th and (i+1)-th bits in the original input, and for <strong>b</strong>, it indicates whether there&#39;re odd number of <strong>1</strong> in the (i+2)-th and (i+3)-th bits.</p>
+<p>Now let&#39;s see what would happen after this comparison. Consider this: What would <strong>a</strong> and <strong>b</strong> like, if we want the i-th bit is <strong>1</strong> after the operation? The only answer is that, only one out of <strong>a</strong> and <strong>b</strong> is <strong>1</strong>. Recall that <strong>a</strong> and <strong>b</strong> indicates the oddness of the original input on there representing range, and only one of them have odd <strong>1</strong>s. So if we merge the two ranges, the new range would have odd <strong>1</strong>s in it. Thus we could say, the bit on i-th position indicates the oddness of <strong>1</strong>s from i-th position to (i+3)-th position in the original input.</p>
+<p>The same things goes all the way to the range is length 32, the number of bits of an integer in Java 8. Then we can say: The bit at the 0-th position indicates the oddness of <strong>1</strong> for the range from 0 to 31, which is the total input.</p>
+<p>Now we have solved our first problem, let&#39;s see the second.</p>
+<h3 id="find-the-longest-sub-array-that-every-element-has-even-139s"><a href="#Find-the-Longest-Sub-array-that-Every-Element-Has-Even-1-39-s" class="headerlink" title="Find the Longest Sub-array that Every Element Has Even 1&#39;s."></a>Find the Longest Sub-array that Every Element Has Even 1&#39;s.</h3><blockquote>
+<p>Here, <strong><em>Even</em></strong> means odd-even even, not an &quot;equal&quot; even.</p>
+</blockquote>
+<p>The brute-force way, of course, it after each modification, go through all the sub-arrays and record the longest one. This is a $O(n^2)$ algorithms and too trivial that we don&#39;t actually need to discuss more about it.</p>
+<p>In order to improve it, we have noticed an interesting fact: For any <code>a &amp; b = x</code>, the <code>x</code> would have odd 1&#39;s if and only if one of <code>a</code> and <code>b</code> have odd 1&#39;s. Prove it as an exercise, it&#39;s not hard!</p>
+<p>So here are two conditions: the number of odd-1&#39;s element in the array is even, and the number is odd. Things are pretty easy for the even situation: the longest sub-array is the whole array. For the odd situation, the longest sub-array is one of the following sub-arrays: the subarray right after the first odd-1&#39;s element to the end, and the subarray from the beginning to the element right before the last odd-1&#39;s element.</p>
+<p>To avoid looking for the first and last odd-1&#39;s element after every modifications, we can use a sorted set to record the positions of them, thus we only need to add or remove one element to the set, or do nothing in each modification. The time complexity is $O(log(k))$ for each modification, where $k$ indicates the size of the set.</p>
+<p>Here&#39;s an implementation of it:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">solve</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> q, <span class="keyword">int</span>[] nums, <span class="keyword">int</span>[][] modis)</span> </span>&#123;</span><br><span class="line">  List&lt;Integer&gt; ans = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">  TreeSet&lt;Integer&gt; positions = <span class="keyword">new</span> TreeSet&lt;&gt;();</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!evenOnes(nums[i])) &#123;</span><br><span class="line">          positions.add(i);</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span>[] modi: modis) &#123;</span><br><span class="line">      <span class="keyword">int</span> pos = modi[<span class="number">0</span>];</span><br><span class="line">      <span class="keyword">int</span> val = modi[<span class="number">1</span>];</span><br><span class="line">      <span class="keyword">if</span> (evenOnes(val)) &#123;</span><br><span class="line">          <span class="keyword">if</span> (positions.contains(pos)) &#123;</span><br><span class="line">              positions.remove(pos);</span><br><span class="line">          &#125;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="keyword">if</span> (!positions.contains(pos)) &#123;</span><br><span class="line">              positions.add(pos);</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> ((positions.size() &amp; <span class="number">1</span>) == <span class="number">0</span>) &#123;</span><br><span class="line">          ans.add(n);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          ans.add(Math.max(n - positions.first() - <span class="number">1</span>, positions.last()));</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>In total, the time complexity of the algorithm is $O((k+q)log(k))$, where $k$ denotes the size of the set, and $q$ is the number of queries.</p>
+<p>It&#39;s also mentioned that van Emde Boas trees can solve this problem, but I&#39;ll leave it to another separate article to talk about it, for this one is already long enough.</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Computer-Science/" rel="tag"># Computer Science</a>
+          
+            <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/14/multiThread/" rel="next" title="ArrayBlockingQueue in Java">
+                <i class="fa fa-chevron-left"></i> ArrayBlockingQueue in Java
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/08/kickstart-2019-D-2/" rel="prev" title="KickStart 2019 Round D Question B. Latest Guests">
+                KickStart 2019 Round D Question B. Latest Guests <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Zhao Fengbo</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/JOHNKYON" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:zhaofengbo1321@gmail.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#problem-link"><span class="nav-text">Problem Link</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#problem"><span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#input"><span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#output"><span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sample-input-and-output"><span class="nav-text">Sample Input and Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#solution"><span class="nav-text">Solution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#how-to-determine-if-a-number-has-even-or-odd-1s-in-its-bits"><span class="nav-text">How to determine if a number has even or odd 1s in its bits?</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#naive"><span class="nav-text">Naive</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#a-small-improve"><span class="nav-text">A small improve</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#can-we-do-even-better"><span class="nav-text">Can we do even better?</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#find-the-longest-sub-array-that-every-element-has-even-139s"><span class="nav-text">Find the Longest Sub-array that Every Element Has Even 1&#39;s.</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate"> 
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhao Fengbo</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.0.6</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.6"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.6"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.6"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.6"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.6"></script>
+
+
+
+  
+
+  
+    <script id="dsq-count-scr" src="https://johnkyon-blog.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'https://johnkyon.github.io/2019/08/01/kickstart-D-1/';
+        this.page.identifier = '2019/08/01/kickstart-D-1/';
+        this.page.title = 'KickStart 2019 Round D Question A. X or What';
+      };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://johnkyon-blog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
+  
+
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

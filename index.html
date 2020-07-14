@@ -1,0 +1,2637 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.6" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.6">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.6">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.6">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.6" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.0.6',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Zhao&#39;s Notebook">
+<meta property="og:url" content="https://johnkyon.github.io/index.html">
+<meta property="og:site_name" content="Zhao&#39;s Notebook">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Zhao&#39;s Notebook">
+
+
+
+
+
+
+  <link rel="canonical" href="https://johnkyon.github.io/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Zhao's Notebook</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119185454-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-119185454-1');
+</script>
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> 
+
+<div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zhao's Notebook</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Computer Science, Math, and >>></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+          
+  <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+</li>
+
+      
+
+      
+    </ul>
+  
+
+  
+    
+
+    
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+    
+
+  
+
+
+  
+
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://johnkyon.github.io/2019/08/08/kickstart-2019-D-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhao Fengbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zhao's Notebook">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/08/kickstart-2019-D-2/" itemprop="url">KickStart 2019 Round D Question B. Latest Guests</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-08T15:37:08+09:00">2019-08-08</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/08/kickstart-2019-D-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2019/08/08/kickstart-2019-D-2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="problem-link"><a href="#Problem-Link" class="headerlink" title="Problem Link"></a>Problem Link</h2><p>See <a href="https://codingcompetitions.withgoogle.com/kickstart/round/0000000000051061/0000000000161427" target="_blank" rel="noopener">here</a>.</p>
+<h2 id="problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>The city of Circleburg has a large circular street with N consulates along it. The consulates are numbered 1, 2, ..., N in clockwise order.</p>
+<p>Today G guests, numbered 1, 2, ..., G will drive along the circular street for M minutes. Each guest is either a clockwise guest (denoted by the character C) or an anti-clockwise guest (denoted by the character A).</p>
+<p>The i-th guest starts at the consulate numbered <script type="math/tex">H_i</script> and at the end of each minute will drive to an adjacent consulate. The i-th guest starts at the j-th consulate. If that guest is:</p>
+<ul>
+<li>a clockwise guest, they will drive to the (j+1)-th consulate (unless they are at the N-th consulate, then they will drive to the 1st consulate).</li>
+<li>an anti-clockwise guest, they will drive to the (j-1)-th consulate (unless they are at the 1st consulate, then they will drive to the N-th consulate).</li>
+</ul>
+<p>Each consulate will only remember the guest that visited them last. If there are multiple guests who visited last, then the consulate will remember all of those guests.</p>
+<p>For each guest, determine how many consulates will remember them.</p>
+<h2 id="input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>The first line of the input gives the number of test cases, T. T test cases follow. Each testcase begins with a line containing the three integers N, G and M, which are the number of consulates, the number of guests and the number of minutes respectively. Then, G lines follow. The i-th line contains the integer <script type="math/tex">H_i</script> followed by a single character; C if the i-th guest is a clockwise guest or A if the i-th guest is an anti-clockwise guest.</p>
+<h2 id="output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>For each test case, output one line containing Case #x: y1 y2 ... yG, where x is the test case number (starting from 1) and yi is the number of consulates that remember the i-th guest.</p>
+<h2 id="sample-input-and-output"><a href="#Sample-input-and-output" class="headerlink" title="Sample input and output"></a>Sample input and output</h2><p>Input<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">5 3 2</span><br><span class="line">5 C</span><br><span class="line">2 A</span><br><span class="line">1 A</span><br><span class="line">2 4 0</span><br><span class="line">1 A</span><br><span class="line">1 C</span><br><span class="line">1 A</span><br><span class="line">1 C</span><br><span class="line">3 2 10</span><br><span class="line">3 C</span><br><span class="line">2 A</span><br><span class="line">6 1 6</span><br><span class="line">4 A</span><br></pre></td></tr></table></figure></p>
+<p>Output<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Case #1: 2 2 1</span><br><span class="line">Case #2: 1 1 1 1</span><br><span class="line">Case #3: 2 2</span><br><span class="line">Case #4: 6</span><br></pre></td></tr></table></figure></p>
+<h2 id="solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>Instead of testing you with the knowledge of smart algorithms or tricky skills, this problem is more of an engineer skill testing: there are too many corner cases that requires consideration. Thus, how to write the code so that it could be maintainable would be a real challenge.</p>
+<p>In order to do so, I&#39;ll try to give a vague explanation of the methods we used to solve this problems, and all other details would remain in the sample code, and I wish the readers can understand it by reading the code.</p>
+<h3 id="analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h3><p>Let&#39;s consider the clockwise guests only at the beginning. For any guest, finishing many circles would result in the same thing as finishing at most one circle, thus <em>m</em> could be reduced to a much smaller number.</p>
+<p>Then let&#39;s look at the problem from the consulates&#39; point of view. Each consulates only tracks it&#39;s latest visited guest, and to track that information, it&#39;s just natural to think about using <strong>Queue</strong> (linkedlist). Here&#39;s what we do: we keep a sliding window of length <em>m</em> starting at 0, and add each guests to queue from the furthest to closest <strong>anti-clockwise</strong> (for clockwise guests). And in each move, we let the sliding window move one step forward clockwise, and add the new guest in the new position into the queue if it exists; Also we poll out the guest who stands in the position which just left the window in this move, also only when such guest exists.</p>
+<p>In each move, the one that can be remembered by a consulate is the one that is the furthest from it, which is just the tail of the queue when the queue is not empty (things are a little bit different for anti-clockwise). And be sure to only remember the furthest one between the clockwise candidate and the anti-clockwise candidate. If they&#39;re of the same distance, remember both.</p>
+<p>Furthermore, the guests starting at the same positions would behave totally the same, thus we can group them together and track the group behavior only, and assign the results to each member in a group when the calculation is finished. Consider the situation that both <em>n</em> and <em>g</em> are large, but all <em>g</em> starts at the same position. If we track each guests independently, we&#39;ll need <script type="math/tex">g \times m</script> time just for recording. If we track the group, we&#39;ll only need <script type="math/tex">g + m</script>.</p>
+<h3 id="code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><p>There&#39;re too many corner cases, so I left every detail in the code, hope you can get it.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.BufferedReader;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStreamReader;</span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Solution solution = <span class="keyword">new</span> Solution();</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(<span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(System.in)));</span><br><span class="line">        <span class="keyword">int</span> T = in.nextInt(); <span class="comment">// Scanner has functions to read ints, longs, strings, chars, etc.</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> t = <span class="number">1</span>; t &lt;= T; ++t) &#123;</span><br><span class="line">            <span class="keyword">int</span> n = in.nextInt();</span><br><span class="line">            <span class="keyword">int</span> g = in.nextInt();</span><br><span class="line">            <span class="keyword">int</span> m = in.nextInt();</span><br><span class="line">            <span class="keyword">int</span>[] dirs = <span class="keyword">new</span> <span class="keyword">int</span>[g];</span><br><span class="line">            <span class="keyword">int</span>[] poses = <span class="keyword">new</span> <span class="keyword">int</span>[g];</span><br><span class="line">            in.nextLine();</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;g; i++) &#123;</span><br><span class="line">                String[] s = in.nextLine().split(<span class="string">" "</span>);</span><br><span class="line">                <span class="comment">// Reset the index from 1-based to 0-based</span></span><br><span class="line">                poses[i] = Integer.parseInt(s[<span class="number">0</span>])-<span class="number">1</span>;</span><br><span class="line">                dirs[i] = (s[<span class="number">1</span>].equals(<span class="string">"C"</span>))? <span class="number">1</span>: -<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">int</span>[] ans = solution.solve(n, g, m, dirs, poses);</span><br><span class="line">            System.out.print(<span class="string">"Case #"</span> + t + <span class="string">":"</span>);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i: ans) &#123;</span><br><span class="line">                System.out.print(<span class="string">" "</span> + i);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(<span class="string">""</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] solve(<span class="keyword">int</span> n, <span class="keyword">int</span> g, <span class="keyword">int</span> m, <span class="keyword">int</span>[] dirs, <span class="keyword">int</span>[] poses) &#123;</span><br><span class="line">        <span class="keyword">if</span> (m &gt; n) &#123;</span><br><span class="line">            m = (m % n) + n;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span>[] ans = <span class="keyword">new</span> <span class="keyword">int</span>[g];</span><br><span class="line">        <span class="keyword">int</span>[] clockCounts = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">        <span class="keyword">int</span>[] antiCounts = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">boolean</span>[] clockGuests = <span class="keyword">new</span> <span class="keyword">boolean</span>[n];</span><br><span class="line">        <span class="keyword">boolean</span>[] antiGuests = <span class="keyword">new</span> <span class="keyword">boolean</span>[n];</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Group quests with same starting positions.</span></span><br><span class="line">        initializeGuestsArray(clockGuests, antiGuests, g, dirs, poses, ans);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Travel each consulate in a clockwise order</span></span><br><span class="line">        LinkedList&lt;Integer&gt; queueClock = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        LinkedList&lt;Integer&gt; queueAnti = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> clockTail =  -m;</span><br><span class="line">        <span class="keyword">while</span> (clockTail &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            clockTail += n;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> antiHead = m % n;</span><br><span class="line">        <span class="keyword">int</span> antiTail = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i == <span class="number">0</span>) &#123;</span><br><span class="line">                initializeWindow(queueClock, clockGuests, n, m);</span><br><span class="line">                initializeAntiWindow(queueAnti, antiGuests, n, m);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// Move window</span></span><br><span class="line">                <span class="keyword">if</span> (!queueClock.isEmpty() &amp;&amp; queueClock.peek() == clockTail) &#123;</span><br><span class="line">                    queueClock.poll();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (clockGuests[i]) &#123;</span><br><span class="line">                    queueClock.offer(i);</span><br><span class="line">                &#125;</span><br><span class="line">                clockTail++;</span><br><span class="line">                <span class="keyword">if</span> (clockTail == n) &#123;</span><br><span class="line">                    clockTail = <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// Anti window moving</span></span><br><span class="line">                <span class="keyword">if</span> (!queueAnti.isEmpty() &amp;&amp; queueAnti.peek() == antiTail) &#123;</span><br><span class="line">                    queueAnti.poll();</span><br><span class="line">                &#125;</span><br><span class="line">                antiHead++;</span><br><span class="line">                <span class="keyword">if</span> (antiHead == n) &#123;</span><br><span class="line">                    antiHead = <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (antiGuests[antiHead]) &#123;</span><br><span class="line">                    queueAnti.offer(antiHead);</span><br><span class="line">                &#125;</span><br><span class="line">                antiTail++;</span><br><span class="line">                <span class="keyword">if</span> (antiTail == n) &#123;</span><br><span class="line">                    antiTail = <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// Record the result of this step.</span></span><br><span class="line">            recordStepResult(queueClock, queueAnti, i, n, m, clockCounts, antiCounts);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Get answers</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;g; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (ans[i] &lt; <span class="number">0</span>) &#123;</span><br><span class="line">                ans[i] = antiCounts[-(ans[i]+<span class="number">1</span>)];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                ans[i] = clockCounts[ans[i]];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">recordStepResult</span><span class="params">(LinkedList&lt;Integer&gt; queueClock, LinkedList&lt;Integer&gt; queueAnti,</span></span></span><br><span class="line"><span class="function"><span class="params">                                  <span class="keyword">int</span> i, <span class="keyword">int</span> n, <span class="keyword">int</span> m, <span class="keyword">int</span>[] clockCounts, <span class="keyword">int</span>[] antiCounts)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> clockDis = -<span class="number">1</span>, antiDis = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (!queueClock.isEmpty()) &#123;</span><br><span class="line">            clockDis = i - queueClock.peek();</span><br><span class="line">            <span class="comment">// If one quest visited it multiple times,</span></span><br><span class="line">            <span class="comment">// the distance would be within m and as large as possible</span></span><br><span class="line">            <span class="keyword">while</span> (clockDis + n &lt;= m) &#123;</span><br><span class="line">                clockDis += n;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!queueAnti.isEmpty()) &#123;</span><br><span class="line">            antiDis = queueAnti.peekLast() - i;</span><br><span class="line">            <span class="keyword">if</span> (antiDis &lt; <span class="number">0</span>) &#123;</span><br><span class="line">                antiDis += n;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// If one quest visited it multiple times,</span></span><br><span class="line">            <span class="comment">// the distance would be within m and as large as possible</span></span><br><span class="line">            <span class="keyword">while</span> (antiDis + n &lt;= m) &#123;</span><br><span class="line">                antiDis += n;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> dis = Math.max(antiDis, clockDis);</span><br><span class="line">        <span class="keyword">if</span> (dis != -<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (dis == clockDis) &#123;</span><br><span class="line">                addIntoAnswer(clockCounts, queueClock.peek());</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (dis == antiDis) &#123;</span><br><span class="line">                addIntoAnswer(antiCounts, queueAnti.peekLast());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initializeAntiWindow</span><span class="params">(LinkedList&lt;Integer&gt; queueAnti, <span class="keyword">boolean</span>[] antiGuests, <span class="keyword">int</span> n, <span class="keyword">int</span> m)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;=m; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> pos = (i &gt;= n)? i % n: i;</span><br><span class="line">            <span class="keyword">if</span> (antiGuests[pos]) &#123;</span><br><span class="line">                queueAnti.offer(pos);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initializeWindow</span><span class="params">(LinkedList&lt;Integer&gt; queue, <span class="keyword">boolean</span>[] clockGuests, <span class="keyword">int</span> n, <span class="keyword">int</span> m)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> pos = <span class="number">0</span> - m;</span><br><span class="line">        <span class="keyword">while</span> (pos &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            pos += n;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (m-- &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (clockGuests[pos]) &#123;</span><br><span class="line">                queue.offer(pos);</span><br><span class="line">            &#125;</span><br><span class="line">            pos++;</span><br><span class="line">            <span class="keyword">if</span> (pos == n) &#123;</span><br><span class="line">                pos = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initializeGuestsArray</span><span class="params">(<span class="keyword">boolean</span>[] clockGuests, <span class="keyword">boolean</span>[] antiGuests,</span></span></span><br><span class="line"><span class="function"><span class="params">                                       <span class="keyword">int</span> g, <span class="keyword">int</span>[] dirs, <span class="keyword">int</span>[] poses, <span class="keyword">int</span>[] ans)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;g; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> dir = dirs[i], pos = poses[i];</span><br><span class="line">            <span class="keyword">if</span> (dir == -<span class="number">1</span>) &#123;</span><br><span class="line">                antiGuests[pos] = <span class="keyword">true</span>;</span><br><span class="line">                ans[i] = -pos - <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                clockGuests[pos] = <span class="keyword">true</span>;</span><br><span class="line">                ans[i] = pos;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">addIntoAnswer</span><span class="params">(<span class="keyword">int</span>[] counts, <span class="keyword">int</span> pos)</span> </span>&#123;</span><br><span class="line">        counts[pos]++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://johnkyon.github.io/2019/08/01/kickstart-D-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhao Fengbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zhao's Notebook">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/01/kickstart-D-1/" itemprop="url">KickStart 2019 Round D Question A. X or What</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-01T16:04:05+09:00">2019-08-01</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/01/kickstart-D-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2019/08/01/kickstart-D-1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="problem-link"><a href="#Problem-Link" class="headerlink" title="Problem Link"></a>Problem Link</h2><p>See <a href="https://codingcompetitions.withgoogle.com/kickstart/round/0000000000051061/0000000000161426" target="_blank" rel="noopener">here</a>.</p>
+<h2 id="problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Steven has an array of N non-negative integers. The i-th integer (indexed starting from 0) in the array is Ai.</p>
+<p>Steven really likes sub-intervals of A that are xor-even. Formally, a sub-interval of A is a pair of indices (L, R), denoting the elements <script type="math/tex">A_L, A_{L+1}, ..., A_{R-1}, A_R</script> . The xor-sum of this sub-interval is <script type="math/tex">A_L</script> xor <script type="math/tex">A_{L+1}</script> xor ... xor <script type="math/tex">A_{R-1}</script> xor <script type="math/tex">A_R</script>, where xor is the bitwise exclusive or.</p>
+<p>A sub-interval is xor-even if its xor-sum has an even number of set bits in its binary representation.</p>
+<p>Steven would like to make Q modifications to the array. The i-th modification changes the $P_i$-th (indexed from 0) element to $V_i$. Steven would like to know, what is the size of the xor-even sub-interval of A with the most elements after each modification?</p>
+<h2 id="input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>The first line of the input gives the number of test cases, T. T test cases follow.</p>
+<p>Each test case starts with a line containing two integers N and Q, denoting the number of elements in Steven&#39;s array and the number of modifications, respectively.</p>
+<p>The second line contains N integers. The i-th of them gives $A_i$ indicating the i-th integer in Steven&#39;s array.</p>
+<p>Then, Q lines follow, describing the modifications. The i-th line contains $P_i$ and $V_i$, The i-th modification changes the $P_i$-th element to $V_i$. indicating that the i-th modification changes the $P_i$-th (indexed from 0) element to $V_i$.</p>
+<h2 id="output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>For each test case, output one line containing Case #x: y_1 y_2 ... y_Q, where x is the test case number (starting from 1) and y_i is the number of elements in the largest xor-even sub-interval of A after the i-th modification. If there are no xor-even sub-intervals, then output 0.</p>
+<h2 id="sample-input-and-output"><a href="#Sample-Input-and-Output" class="headerlink" title="Sample Input and Output"></a>Sample Input and Output</h2><p>Input<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">4 3</span><br><span class="line">10 21 3 7</span><br><span class="line">1 13</span><br><span class="line">0 32</span><br><span class="line">2 22</span><br><span class="line">5 1</span><br><span class="line">14 1 15 20 26</span><br><span class="line">4 26</span><br></pre></td></tr></table></figure></p>
+<p>Output<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Case #1: 4 3 4</span><br><span class="line">Case #2: 4</span><br></pre></td></tr></table></figure></p>
+<h2 id="solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>This is a problem that we can tear it apart into two sub-problems, how to determine if a number has even or odd 1s in its bits, and how to find the longest subarray. Let&#39;s do it one by one.</p>
+<h3 id="how-to-determine-if-a-number-has-even-or-odd-1s-in-its-bits"><a href="#How-to-determine-if-a-number-has-even-or-odd-1s-in-its-bits" class="headerlink" title="How to determine if a number has even or odd 1s in its bits?"></a>How to determine if a number has even or odd 1s in its bits?</h3><p>This one looks simple, while it can also be pretty tricky. Let&#39;s start from the most naive one.</p>
+<h4 id="naive"><a href="#Naive" class="headerlink" title="Naive"></a>Naive</h4><p>Naively compare every bits and count them, see if there&#39;s even of them.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">evenOnes</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span> (n != <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> ((n &amp; <span class="number">1</span>) == <span class="number">1</span>) &#123;</span><br><span class="line">      count++;</span><br><span class="line">    &#125;</span><br><span class="line">    n &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> (count &amp; <span class="number">1</span>) == <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="a-small-improve"><a href="#A-small-improve" class="headerlink" title="A small improve"></a>A small improve</h4><p>We have noticed that this require $k$ times of comparisons, while $k$ denotes the number of bits of the integer. In Java 8, $k = 32$.</p>
+<p>Can we improve it a little bit? Here a method that allow us to compare exactly $a$ times, while $a$ denotes the total number of 1 in $n$&#39;s bits presentation. Here&#39;s how we do it:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">evenOnes</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span> (n!=<span class="number">0</span>) &#123;</span><br><span class="line">    n &amp;= n-<span class="number">1</span>;</span><br><span class="line">    count++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> (count &amp; <span class="number">1</span>) == <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>How did this work? Take a look at the figure.</p>
+<p><img src="/images/kick2019roundD/1.png" alt="Figure 1"></p>
+<p>Say we split the binary representation of the integer n into two parts, <strong>b</strong> denotes from the first <strong>1</strong> to the lowest bit, and <strong>a</strong> for the rest.</p>
+<p>For $n-1$, we can see that <strong>a</strong> part stayed the same and every bits get flipped in <strong>b</strong> part, thus the &amp; operation between will keep everything in <strong>a</strong> the same, and turn every bits in <strong>b</strong> into <strong>0</strong>. As a result, we erased the first <strong>1</strong> in $n$, from the lowest bit to highest. The loop terminates until $n = 0$, which indicates that all <strong>1</strong> have been erased from $n$. Counting the time of the loop, would be the number of <strong>1</strong>s in n.</p>
+<h4 id="can-we-do-even-better"><a href="#Can-we-do-even-better" class="headerlink" title="Can we do even better?"></a>Can we do even better?</h4><p>Yes we can, but to be strictly correct, we cannot actually call this better under all circumstance (Imagine if the n is 0, can we actually do it any better?). The fact is we can do this by do five comparison under all circumstance, thus for any $n$ that has more than five <strong>1</strong>s, it&#39;s better, other than that, it&#39;s actually worse.</p>
+<p>But we&#39;re presenting the method anyway, because, firstly, the method is tricky and interesting, and secondly, in practice, this method is stable, especially for input that has a lot of <strong>1</strong>, it&#39;s much faster.</p>
+<p>Here&#39;s the code, and it&#39;s pretty simple.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">evenOnes</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">  x ^= x &gt;&gt; <span class="number">1</span>;</span><br><span class="line">  x ^= x &gt;&gt; <span class="number">2</span>;</span><br><span class="line">  x ^= x &gt;&gt; <span class="number">4</span>;</span><br><span class="line">  x ^= x &gt;&gt; <span class="number">8</span>;</span><br><span class="line">  x ^= x &gt;&gt; <span class="number">16</span>;</span><br><span class="line">  <span class="keyword">return</span> (x&amp;<span class="number">1</span>) == <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Now, here&#39;s the tricky part, let&#39;s start from the first comparison: <code>x ^= x &gt;&gt; 1</code></p>
+<p><img src="/images/kick2019roundD/2.png" alt="Figure 2"></p>
+<p>See from the figure, and concentrate on the i-th bit. Under what circumstance would the i-th bit be <strong>1</strong> ? The answer is there&#39;s only one <strong>1</strong> at the i-th and (i+1)-th bit in x. Which means, if the result bit at the i-th bit is <strong>1</strong>, that indicates there are <strong>odd</strong> number of <strong>1</strong>s between the i-th and the (i+1)-th bits, and vice versa.</p>
+<p>Now let&#39;s take a look at the second comparison: <code>x ^= x &gt;&gt; 2;</code>, which can be indicated by the figure below:</p>
+<p><img src="/images/kick2019roundD/3.png" alt="Figure 2"></p>
+<p>Now remember the <code>x</code> is the <code>x</code> after the first comparison, which means the i-th bit, <strong>a</strong> indicates whether there&#39;re odd number of <strong>1</strong> in the i-th and (i+1)-th bits in the original input, and for <strong>b</strong>, it indicates whether there&#39;re odd number of <strong>1</strong> in the (i+2)-th and (i+3)-th bits.</p>
+<p>Now let&#39;s see what would happen after this comparison. Consider this: What would <strong>a</strong> and <strong>b</strong> like, if we want the i-th bit is <strong>1</strong> after the operation? The only answer is that, only one out of <strong>a</strong> and <strong>b</strong> is <strong>1</strong>. Recall that <strong>a</strong> and <strong>b</strong> indicates the oddness of the original input on there representing range, and only one of them have odd <strong>1</strong>s. So if we merge the two ranges, the new range would have odd <strong>1</strong>s in it. Thus we could say, the bit on i-th position indicates the oddness of <strong>1</strong>s from i-th position to (i+3)-th position in the original input.</p>
+<p>The same things goes all the way to the range is length 32, the number of bits of an integer in Java 8. Then we can say: The bit at the 0-th position indicates the oddness of <strong>1</strong> for the range from 0 to 31, which is the total input.</p>
+<p>Now we have solved our first problem, let&#39;s see the second.</p>
+<h3 id="find-the-longest-sub-array-that-every-element-has-even-139s"><a href="#Find-the-Longest-Sub-array-that-Every-Element-Has-Even-1-39-s" class="headerlink" title="Find the Longest Sub-array that Every Element Has Even 1&#39;s."></a>Find the Longest Sub-array that Every Element Has Even 1&#39;s.</h3><blockquote>
+<p>Here, <strong><em>Even</em></strong> means odd-even even, not an &quot;equal&quot; even.</p>
+</blockquote>
+<p>The brute-force way, of course, it after each modification, go through all the sub-arrays and record the longest one. This is a $O(n^2)$ algorithms and too trivial that we don&#39;t actually need to discuss more about it.</p>
+<p>In order to improve it, we have noticed an interesting fact: For any <code>a &amp; b = x</code>, the <code>x</code> would have odd 1&#39;s if and only if one of <code>a</code> and <code>b</code> have odd 1&#39;s. Prove it as an exercise, it&#39;s not hard!</p>
+<p>So here are two conditions: the number of odd-1&#39;s element in the array is even, and the number is odd. Things are pretty easy for the even situation: the longest sub-array is the whole array. For the odd situation, the longest sub-array is one of the following sub-arrays: the subarray right after the first odd-1&#39;s element to the end, and the subarray from the beginning to the element right before the last odd-1&#39;s element.</p>
+<p>To avoid looking for the first and last odd-1&#39;s element after every modifications, we can use a sorted set to record the positions of them, thus we only need to add or remove one element to the set, or do nothing in each modification. The time complexity is $O(log(k))$ for each modification, where $k$ indicates the size of the set.</p>
+<p>Here&#39;s an implementation of it:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">solve</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> q, <span class="keyword">int</span>[] nums, <span class="keyword">int</span>[][] modis)</span> </span>&#123;</span><br><span class="line">  List&lt;Integer&gt; ans = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">  TreeSet&lt;Integer&gt; positions = <span class="keyword">new</span> TreeSet&lt;&gt;();</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!evenOnes(nums[i])) &#123;</span><br><span class="line">          positions.add(i);</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span>[] modi: modis) &#123;</span><br><span class="line">      <span class="keyword">int</span> pos = modi[<span class="number">0</span>];</span><br><span class="line">      <span class="keyword">int</span> val = modi[<span class="number">1</span>];</span><br><span class="line">      <span class="keyword">if</span> (evenOnes(val)) &#123;</span><br><span class="line">          <span class="keyword">if</span> (positions.contains(pos)) &#123;</span><br><span class="line">              positions.remove(pos);</span><br><span class="line">          &#125;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="keyword">if</span> (!positions.contains(pos)) &#123;</span><br><span class="line">              positions.add(pos);</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> ((positions.size() &amp; <span class="number">1</span>) == <span class="number">0</span>) &#123;</span><br><span class="line">          ans.add(n);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          ans.add(Math.max(n - positions.first() - <span class="number">1</span>, positions.last()));</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>In total, the time complexity of the algorithm is $O((k+q)log(k))$, where $k$ denotes the size of the set, and $q$ is the number of queries.</p>
+<p>It&#39;s also mentioned that van Emde Boas trees can solve this problem, but I&#39;ll leave it to another separate article to talk about it, for this one is already long enough.</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://johnkyon.github.io/2019/05/14/multiThread/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhao Fengbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zhao's Notebook">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/14/multiThread/" itemprop="url">ArrayBlockingQueue in Java</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-14T23:43:54+09:00">2019-05-14</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Engineer/" itemprop="url" rel="index"><span itemprop="name">Engineer</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/05/14/multiThread/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2019/05/14/multiThread/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>My recent phone interview encountered with an OOD question about multi-thread safe queue (and I&#39;m a new grad).<br>I didn&#39;t do well so I read into the source code of ArrayBlockingQueue, which is a widely used multi-thread-safe queue class in openJDK.</p>
+<p>For full source code of openJDK, check <a href="https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/concurrent/ArrayBlockingQueue.java" target="_blank" rel="noopener">here</a>.</p>
+<h2 id="class-members"><a href="#Class-Members" class="headerlink" title="Class Members"></a>Class Members</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayBlockingQueue</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">AbstractQueue</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">        <span class="keyword">implements</span> <span class="title">BlockingQueue</span>&lt;<span class="title">E</span>&gt;, <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** The queued items */</span></span><br><span class="line">    <span class="keyword">final</span> Object[] items; <span class="comment">// Fixed size;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** items index for next take, poll, peek or remove */</span></span><br><span class="line">    <span class="keyword">int</span> takeIndex;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** items index for next put, offer, or add */</span></span><br><span class="line">    <span class="keyword">int</span> putIndex;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Number of elements in the queue */</span></span><br><span class="line">    <span class="keyword">int</span> count;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * Concurrency control uses the classic two-condition algorithm</span></span><br><span class="line"><span class="comment">     * found in any textbook.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"></span><br><span class="line">     <span class="comment">/** Main lock guarding all access */</span></span><br><span class="line">    <span class="keyword">final</span> ReentrantLock lock;</span><br><span class="line">    <span class="comment">/** Condition for waiting takes */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Condition notEmpty;</span><br><span class="line">    <span class="comment">/** Condition for waiting puts */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Condition notFull;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>With these members, ArrayBlockingQueue implemented a fixed-size, multi-thread safe queue.</p>
+<h2 id="main-methods"><a href="#Main-methods" class="headerlink" title="Main methods"></a>Main methods</h2><p>For a queue, there&#39;re two main write operations: put one element into the queue, and get one element out from the queue. In multi-thread safe programs all write operations should share a Mutex. Here we&#39;re implementing our own version of three different adding method and three different polling method. They should be like</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>add()</td>
+<td>Add an element to the queue. Return true if succeed; Throw IllegalStateException if the queue is full.</td>
+</tr>
+<tr>
+<td>offer()</td>
+<td>Add an element to the queue. Return true if succeed; Return false if failed.</td>
+</tr>
+<tr>
+<td>put()</td>
+<td>Add an element to the queue. Return true if succeed; Waiting if the queue is full until it&#39;s not full.</td>
+</tr>
+<tr>
+<td>poll()</td>
+<td>Retrieves and removes the head of this queue, or returns null if this queue is empty.</td>
+</tr>
+<tr>
+<td>take()</td>
+<td>Retrieves and removes the head of this queue, waiting if necessary until an element becomes available.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The key point here to keep the queue safe is by using a main lock and two conditions. Since all the operations are write operations, they share a Mutex.</p>
+<p>Let&#39;s look into these methods one by one.</p>
+<h3 id="add"><a href="#add" class="headerlink" title="add()"></a>add()</h3><p>In fact, add simply inherited it&#39;s super class&#39;s implementation.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">add</span><span class="params">(E e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (offer(e)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="string">"Queue full"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="offer"><a href="#offer" class="headerlink" title="offer()"></a>offer()</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Inserts the specified element at the tail of this queue if it is</span></span><br><span class="line"><span class="comment"> * possible to do so immediately without exceeding the queue's capacity,</span></span><br><span class="line"><span class="comment"> * returning &#123;<span class="doctag">@code</span> true&#125; upon success and &#123;<span class="doctag">@code</span> false&#125; if this queue</span></span><br><span class="line"><span class="comment"> * is full.  This method is generally preferable to method &#123;<span class="doctag">@link</span> #add&#125;,</span></span><br><span class="line"><span class="comment"> * which can fail to insert an element only by throwing an exception.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@throws</span> NullPointerException if the specified element is null</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">offer</span><span class="params">(E e)</span> </span>&#123;</span><br><span class="line">    checkNotNull(e);</span><br><span class="line">    <span class="keyword">final</span> ReentrantLock lock = <span class="keyword">this</span>.lock;</span><br><span class="line">    lock.lock();    <span class="comment">// Make sure only one thread can write to the queue</span></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (count == items.length)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            insert(e);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        lock.unlock();          <span class="comment">// Release the lock</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="put"><a href="#put" class="headerlink" title="put()"></a>put()</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Inserts the specified element at the tail of this queue, waiting</span></span><br><span class="line"><span class="comment"> * for space to become available if the queue is full.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@throws</span> InterruptedException &#123;<span class="doctag">@inheritDoc</span>&#125;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@throws</span> NullPointerException &#123;<span class="doctag">@inheritDoc</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">put</span><span class="params">(E e)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">    checkNotNull(e);</span><br><span class="line">    <span class="keyword">final</span> ReentrantLock lock = <span class="keyword">this</span>.lock;</span><br><span class="line">    lock.lockInterruptibly();   <span class="comment">// Make sure only one thread can write to the queue</span></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">while</span> (count == items.length)   <span class="comment">// If the queue is full, current thread would get hang up.</span></span><br><span class="line">            notFull.await();            <span class="comment">// And the condition turns to await status.</span></span><br><span class="line">        insert(e);</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        lock.unlock();          <span class="comment">// Release the lock</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="lock-and-lockinterruptibly"><a href="#lock-and-lockInterruptibly" class="headerlink" title="lock() and lockInterruptibly()"></a>lock() and lockInterruptibly()</h3><p>As we can see from the code above, in <code>offer()</code>, we used <code>lock.lock()</code>. However in <code>put()</code>, we used <code>lock.lockInterruptibly()</code> instead. What is the difference between them?</p>
+<p><code>lock.lock()</code> would continuously trying to get the lock.<br><code>lock.lockInterruptibly()</code> behaves almost the same as <code>lock()</code>, however, if it is already interrupted or is interrupted while trying to get the lock, it would throw an exception, which should be handled by it&#39;s invoker.</p>
+<h3 id="poll"><a href="#poll" class="headerlink" title="poll()"></a>poll()</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">poll</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> ReentrantLock lock = <span class="keyword">this</span>.lock;   <span class="comment">// Make sure only one thread can write to the queue</span></span><br><span class="line">    lock.lock();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> (count == <span class="number">0</span>) ? <span class="keyword">null</span> : extract();</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        lock.unlock();      <span class="comment">// Release the lock</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="take"><a href="#take" class="headerlink" title="take()"></a>take()</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">take</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> ReentrantLock lock = <span class="keyword">this</span>.lock;   <span class="comment">// Make sure only one thread can write to the queue</span></span><br><span class="line">    lock.lockInterruptibly();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">while</span> (count == <span class="number">0</span>)      <span class="comment">// If current queue is empty, current thread get hang up.</span></span><br><span class="line">            notEmpty.await();   <span class="comment">// And the empty condition changes its status.</span></span><br><span class="line">        <span class="keyword">return</span> extract();</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        lock.unlock();      <span class="comment">// Release the lock</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="insert-and-extract"><a href="#insert-and-extract" class="headerlink" title="insert() and extract()"></a>insert() and extract()</h3><p>These two methods basically does two thing: do the operation and notify the awaiting process.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Inserts element at current put position, advances, and signals.</span></span><br><span class="line"><span class="comment"> * Call only when holding lock.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">(E x)</span> </span>&#123;</span><br><span class="line">    items[putIndex] = x;</span><br><span class="line">    putIndex = inc(putIndex);       <span class="comment">// Circularly decrement i.</span></span><br><span class="line">    ++count;</span><br><span class="line">    notEmpty.signal();              <span class="comment">// Notify the notEmpty condition.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Extracts element at current take position, advances, and signals.</span></span><br><span class="line"><span class="comment"> * Call only when holding lock.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> E <span class="title">extract</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> Object[] items = <span class="keyword">this</span>.items;</span><br><span class="line">    E x = <span class="keyword">this</span>.&lt;E&gt;cast(items[takeIndex]);</span><br><span class="line">    items[takeIndex] = <span class="keyword">null</span>;</span><br><span class="line">    takeIndex = inc(takeIndex);     <span class="comment">// Circularly decrement i.</span></span><br><span class="line">    --count;</span><br><span class="line">    notFull.signal();               <span class="comment">// Nofity the notEmpty condition.</span></span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Above is the main part of the ArrayBlockingQueue in Java (openJDK). It&#39;s easy to understand, and a good review of two-condition algorithm.</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://johnkyon.github.io/2019/05/11/job-hunting-Tokyo2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhao Fengbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zhao's Notebook">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/11/job-hunting-Tokyo2/" itemprop="url">东京码农求职记(准备与面试)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-11T00:39:45+09:00">2019-05-11</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Engineer/" itemprop="url" rel="index"><span itemprop="name">Engineer</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/05/11/job-hunting-Tokyo2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2019/05/11/job-hunting-Tokyo2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="before-reading"><a href="#Before-Reading" class="headerlink" title="Before Reading"></a>Before Reading</h2><p>这篇文章紧跟上一篇文章，主要通过作者自身经历和理解，论述如何进行求职的前期准备和实战。同样，此文将包含极强的采样误差和主观感情色彩，希望读者理解。</p>
+<h2 id="hard-skill-soft-skill"><a href="#Hard-Skill-Soft-Skill" class="headerlink" title="Hard Skill, Soft Skill"></a>Hard Skill, Soft Skill</h2><p>此文的每一章节都将分为两个部分叙述，分别是Hard Skill（可以量化的部分）和Soft Skill(无法量化或很难量化的部分)。</p>
+<p>虽然因为大多数公司都把公司文化拔高到了一个不应该的高度，甚至有把公司文化道德化的倾向，导致我非常反感宣传公司文化的行为。但是我也不得不承认，有的公司文化，如果你抛却它忽悠员工的部分，它可以是非常有用的尺子，用来指导你和他人的工作。这里我推荐Amazon的<a href="https://www.amazon.jobs/en/principles" target="_blank" rel="noopener">Leadership Principles</a>。这里面有一些莫名其妙的自大狂玩意儿（比如Are Right, A Lot)，但是其他可以主观实施和控制的部分，是许多顶级公司对员工共同的要求，可以用来指导自己准备求职过程的方方面面。</p>
+<p>举个小例子，许多人提到了日本总体环境佛系，想准备什么东西都没有人做。其他人都不做，你觉得这是对的，你去做了，这就是&quot;Have backbones&quot;，&quot;Bias for Action&quot;和&quot;Think Big&quot;。如果你能够影响、组织起其他人跟你一起做，这就是&quot;Earn Trust&quot;, &quot;Ownership&quot;和&quot;Hire and Develop the Best&quot;。听起来很傻，但是这是一个优秀的码农应有的素质，也是你在简历中可以，甚至说是应该体现的素质，在面试的时候，这也是非常好的话题。</p>
+<h2 id="information-hunter"><a href="#Information-Hunter" class="headerlink" title="Information Hunter"></a>Information Hunter</h2><blockquote>
+<p>Drowning in information, starving for knowledge.</p>
+</blockquote>
+<p>就职的第一步，是获得信息，包括招聘信息，宣讲会，招聘时间表，过去问，具体公司的招聘流程，招聘时间线，招聘流程。虽然大多数日企都服从经团联的安排，一般从毕业前一年的3月开始招聘，但是码农的Dream Company普遍是不管的。这也导致码农就活的战线会拉的非常的长，以我个人的经验而言，我从投出第一份简历到拿到目前最好的offer (Amazon SDE)，中间间隔了8个月，而Indeed 和Google都还在流程中。在如此长期的战线中，如何尽可能及时准确地获得信息就成了一大难题。</p>
+<h3 id="hard"><a href="#Hard" class="headerlink" title="Hard"></a>Hard</h3><p>招聘信息最直接、及时、准确的来源肯定是各大公司官网。提前锁定自己心仪公司的网站，设置Job Alert，并且定期查看是最万无一失的方法（点名批评Microsoft, college 招聘页面曾经完全down掉了两个月之久）。</p>
+<p>除了各大公司的招聘官网，一下这些网站都有能够较为即使准确地获得招聘信息(包括招聘会和招聘投递信息)：<br><a href="https://acaric.jp/" target="_blank" rel="noopener">アカリク</a>;<br><a href="https://job.rikunabi.com/2020/" target="_blank" rel="noopener">リクナビ</a>(注意这个网站是分年度的，要选择自己对应的毕业年度);<br><a href="https://gaishishukatsu.com/" target="_blank" rel="noopener">外資就活</a>;<br><a href="https://www.careercross.com/en" target="_blank" rel="noopener">CareerCross</a>;<br><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></p>
+<h3 id="soft"><a href="#Soft" class="headerlink" title="Soft"></a>Soft</h3><p>建立你的信息网络。找到那些和你想法类似的人，主动和他们建立联系和共享信息。(Tip:收获信息的最好方式是主动提供信息)</p>
+<p>如何找到这些人？上同一门课认识的人，留学生群，参加招聘会结识的人。只要你主动地说Hi,主动地分享你有的信息，那么信息网络的建成只不过是水到渠成了。</p>
+<h2 id="resumes"><a href="#Resumes" class="headerlink" title="Resumes"></a>Resumes</h2><p>了解到了招聘岗位之后，我们就要开始投递了。投递的第一步就是准备自己的简历。不要等到临投前一天才开始写简历，今天就开始写。写简历是一个不停地改进的过程，也是审视自己的不足的过程。日本留学一个不太好的部分就是，因为实习机会太少，而周围很多人都是每天吃喝玩乐，很多学生凑不出一整页的简历。如果你也是其中一员，那么抓紧时间，多做一些项目，做一些实习，打一些比赛，发一些论文，无论如何也要凑出一整页简历来。</p>
+<p>虽然许多日企是给一个entry sheet让你填，但是填的内容和你的简历内容大同小异。而且top tier 的公司基本都是要直接收CV。</p>
+<p>建议去<a href="https://www.1point3acres.com/bbs/" target="_blank" rel="noopener">一亩三分地</a>看看如何准备和写简历。</p>
+<h3 id="hard"><a href="#Hard-1" class="headerlink" title="Hard"></a>Hard</h3><p>哪些东西可以写进简历：教育经历，实习项目，开源项目，自己的side project，比赛项目，等等。</p>
+<p>简历最好用中英日文各写一份，这样在复制粘贴到entry sheet的时候不用重复写（很多公司的ES在提交之后就不能看到了，我一开始不知道，至少写了3遍实习项目的日文版）。</p>
+<p>虽说每份简历在投递前最好是有针对性的修改，但是对于大部分根本写不满一页的学生来说，有时间想简历怎么编，不如赶紧再去做个项目。对于能够写出一页半简历的同学来说，可以在每次投递前针对自己投递的岗位删掉一些不太契合这一岗位的项目的细节，始终保持简历上有所有的项目，重点项目重点说，而且简历长度刚好一页。</p>
+<p>推荐通过<a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>初步编写自己的简历，还可以在LinkedIn上查看、学习其他人是如何编写自己的项目经历的。在出最终简历的时候，推荐使用<a href="https://www.wondercv.com/?locale=zh-CN" target="_blank" rel="noopener">超级简历</a>，跟着它的引导调整自己简历的内容和排版。</p>
+<h3 id="soft"><a href="#Soft-1" class="headerlink" title="Soft"></a>Soft</h3><p>同一个项目用不同的说法写出来，效果是完全不一样的。要针对性的表达你在项目中的作用。同时，为了能够在项目中有东西可说，应当在做项目之前和做项目中就想好它会在我的简历中怎样展现出来，一边意识到简历一边推进项目有奇效。</p>
+<p>同时我发现有的转行的同学，误认为项目就是在GitHub 上找个开源项目实现一下，或者就是上了某个网课，做了课设作业。不是说这些就不行，而是这些项目缺乏区分度，不能体现你作为candidate拥有的竞争力。</p>
+<p>相对于课设，实习经历，比赛经历和对开源社区的贡献就明显有更强的竞争力，这些经历可以说是实际工作的预演，是采用了某种技术解决了某个实际问题的过程。好消息是日本有这些经历的人真的不多，坏消息是还是比好的岗位数量多得多的。</p>
+<h2 id="online-assessment"><a href="#Online-Assessment" class="headerlink" title="Online Assessment"></a>Online Assessment</h2><h3 id="hard"><a href="#Hard-2" class="headerlink" title="Hard"></a>Hard</h3><p>普遍是编码测试，建议在C++, Java和 Python中至少弄懂一门语言。如果你只会Python，那建议还是要学一学C++或者Java，因为Amazon东京 OA 只许用C++或者Java。</p>
+<h3 id="soft"><a href="#Soft-2" class="headerlink" title="Soft"></a>Soft</h3><p>没有，即使有，也很弱智。我还没见过招码农还要求做SPI的公司。</p>
+<h2 id="interviews"><a href="#Interviews" class="headerlink" title="Interviews"></a>Interviews</h2><p>面试是整个招聘流程中最大的大头，而且top tier的面试强度是非常高的，Amazon一上午面4轮，Google听说也是一天面4轮。虽然一般认为面试并不能在如此短的时间里体现一个人的水平和性格，但是面试总归是比简历靠谱的。准备美资互联网公司的方法也十分简单和直接，相当多早就有志于此的朋友可能对于他们考察方法早已烂熟于胸，但是也要考虑到很多日本的留学生根本没有关注过这方面的情况，我还是决定写一写具体的面试内容和准备方法。</p>
+<p>推荐参考书目：《剑指offer》和《Cracking the Coding Interview》。前者是中文编写，篇幅更短小，适合完全没有外企面试经验的同学熟悉面试流程和面试重点。后者是英文编写，更详细，篇幅更长，适合有一定准备的同学阅读，熟悉一些术语的英语说法和更多面试中的细节。</p>
+<p>推荐论坛：<a href="https://www.1point3acres.com/bbs/" target="_blank" rel="noopener">一亩三分地</a>。不仅有最新最全面经，还有装逼，打脸，互怼，感情生活，北美猥琐男等愉悦身心的顶级资讯，实乃居家旅行，刷题拿offer必备网站。</p>
+<p>建议找一两个朋友定期互相做mock interview,可以习惯一边说话一边写代码，同时习惯在白板上写代码，还可以互相给feedback来提升面试过程的表现。</p>
+<h3 id="hard-skill"><a href="#Hard-Skill" class="headerlink" title="Hard Skill"></a>Hard Skill</h3><p>Top tier公司都是要白板编程的，有的公司除了白板编程之外还有一些Behavior Question(BQ).白板编程主要考察算法和数据结构，new grad偶尔会问一些简单的 OOD(Object Oriented Design)问题。</p>
+<h4 id="算法和数据结构"><a href="#算法和数据结构" class="headerlink" title="算法和数据结构"></a>算法和数据结构</h4><blockquote>
+<p>究竟是我刷了题，还是题刷了我？</p>
+</blockquote>
+<p>刷题进公司一直是一个充满争议的话题，但是不得不承认，想要进top tier公司，对于大部分人来说，刷题是最有效的途径。这里给出我的刷题记录以供参考（我本人没有任何算法竞赛的经验）。</p>
+<p><img src="/images/jobhunt/leetcode0.png" alt="刷题提交记录"></p>
+<center>刷题提交记录</center>
+
+<p><img src="/images/jobhunt/leetcode3.png" alt="总题数"></p>
+<center>总题数</center>
+
+<p><img src="/images/jobhunt/leetcode1.png" alt="周赛全球排名"></p>
+<center>周赛全球排名</center>
+
+<p><img src="/images/jobhunt/leetcode2.png" alt="Amazon面试前一周的周赛排名"></p>
+<center>Amazon面试前一周的周赛排名</center>
+
+<p>对于没有竞赛基础的同学来说，在刚开始刷题的时候会感受到痛苦，这是十分正常的，事实上，大部分人在做到150题左右，就会开始量变到质变。</p>
+<p>在刷了一定数量的题之后，如果想要知道自己大概是个什么水平，可以参加 Leetcode 每周的周赛，日本时间周日早上11：30至13：00。周赛是个很好的检验自己水平的地方，同时也是个获得自信的好地方，因为大多数参赛选手实在是菜的可怕。</p>
+<p>注意：并不是说刷到这个数才能进这些公司，实际上我是刷了大量的无用功的，因为我刷到一半有点刷上瘾了，觉得做这些算法题是一件很快乐的事，没事干做两道，还因此荒废了研究。。。现在我觉得 leetcode 没太大意思，又跑去做 Hackerrank 玩，纯粹是出于个人兴趣才做了这么多。</p>
+<h4 id="ood"><a href="#OOD" class="headerlink" title="OOD"></a>OOD</h4><p>《Cracking the Coding Interview》和<a href="https://www.1point3acres.com/bbs/" target="_blank" rel="noopener">一亩三分地</a>里有很多OOD的例子，但是实话实说，遇到做过的才会，遇到没做过的还是挺蒙的。。。好在OOD并没有一个标准答案，你只要和面试官探讨出一个make sense的方案就行了。</p>
+<h4 id="behavior-questions"><a href="#Behavior-Questions" class="headerlink" title="Behavior Questions"></a>Behavior Questions</h4><p>Amazon一定会有BQ，面试之前照着<a href="https://www.amazon.jobs/en/principles" target="_blank" rel="noopener">Leadership Principles</a>准备一些小故事。Google有可能有BQ，但是概率实在是很低。</p>
+<h3 id="soft-skill"><a href="#Soft-Skill" class="headerlink" title="Soft Skill"></a>Soft Skill</h3><p>不同公司会对面试官进行不同的训练，要求他们重视候选人的某些方面。但是总的来说，大多数面试官评价候选者的一个很重要标准是，他是否愿意和候选者作为同事共事。因此面试很大程度上，是模拟你和面试官在工作中共同解决一个问题，想象他是你的一个同事，抱着和同事交流的心态和态度去沟通，比较容易做到不卑不亢。</p>
+<h4 id="自信"><a href="#自信" class="headerlink" title="自信"></a>自信</h4><p>我自己有幸有过当面试官的经验，后来和许多其他的工程师聊的时候，发现大多数工程师都或多或少当过面试官。所以面试官其实很有可能就是一个普通的码农，面试的时候完全没有害怕的必要。</p>
+<p>其次，不自信在面试的时候绝对是红灯信号，背后的理由也很简单：如果你自己都不相信自己可以胜任这份工作，那么你如何说服你的面试官相信你？</p>
+<p>当然也要注意分清自信和自负的区别。你可以是一个geek，对自己的技术充满自信，但你不能是一个jerk，目空一切，一碰就炸，没人想要和jerk共事。如果你可以笑着和面试官讲一个你以前的经历中犯过的错，就像谈论自己小时候的一段逸闻一样，那么你已经展露出了充分的自信。当然，你也要记得讲自己是如何处理这个错的，获得了怎样的效果，毕竟这还是在面试中。</p>
+<h4 id="交流能力"><a href="#交流能力" class="headerlink" title="交流能力"></a>交流能力</h4><p>许多面试题都是模糊的，不明确的，并不是因为这个题有问题，而是面试官有意考察你在工作中的沟通能力。在听到一个问题之后，尽可能的问出一切你认为可能的问题，包括但不限于：输入是否遵循某种pattern(例如一个数组是否是排好序的数组)，如何处理非法的输入(包括空的输入和会overflow的输入)，如果要实现多个互相影响的功能，那么他们被调用的次数分别是怎样的（这会严重影响你对于整个类的设计）。</p>
+<p>同时，在整个思考过程中，尽量做到think aloud,把你的任何一点想法都说出来和面试官讨论，如果面试官没有提出异议，那说明你的思路是没有大的问题。同样，如果面试官明确表达了不同意，不要在自己的思路上纠结。谁对谁错不一定，但是面试官会认为你不能听取他人意见，沟通能力差。</p>
+<p>有些朋友表达了对自己语言能力的担忧，我认为其实对于大部分人来说，对英语水平的担忧完全是杞人忧天。语言只是交流的工具，只要达到了可以沟通的水平就可以了。Google Tokyo Search Team在 tech talk上开玩笑地说&quot;The official language here is non-native English&quot;。如果在沟通过程中有没听明白的部分，完全可以&quot;I beg your pardon&quot;或者自己复述一遍面试官的话，询问自己是否理解正确了。</p>
+<h4 id="与公司文化的契合程度"><a href="#与公司文化的契合程度" class="headerlink" title="与公司文化的契合程度"></a>与公司文化的契合程度</h4><p>许多公司会挑选契合公司文化的雇员，有的公司明确的给出了公司文化的要求，而有的公司隐藏的很深。面试的时候，面试者可以大概感受到公司的氛围。</p>
+<p>我个人的建议是，不要在面试的时候过度的伪装自己，因为求职是一个双向选择的过程，如果你去到了一个你无法适应的工作环境中，你的接下来几年都会相当的痛苦：你清醒的时间里大约有一半都在工作上，而你却不喜欢它。</p>
+<p>但是也有一些技巧可以帮助你扬长避短，体现你符合公司文化，或者说展现你的优势。例如，大多数情况下，合作项目中总会有那么几个摸鱼侠。如果你是个好好先生，容忍了摸鱼侠的存在，那么你就可以着重表达自己“Earn Trust”的部分，你的组员都相信你，或者说，至少你们没有撕破脸。如果你无法忍受摸鱼侠，和他们大吵一架并且把他们赶走了，你可以着重表达自己“Hire and Develop the Best”和“Insist on the Highest Standard”。当然你要注意自己的表达，不要让自己听起来像个自负的jerk。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>找工作是一个小马过河的问题，最后的最后，我依旧想要强调，这两篇文章仅仅代表我个人的经验和看法，完全不保证客观性，准确性和及时性。这两篇文章仅作抛砖引玉，希望能给各位学弟学妹提供一点点微小的帮助，同时也希望其他看到这篇博客，有自己想法的朋友，也能够通过各种渠道发声。After all, the community is you and me and everyone.</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://johnkyon.github.io/2019/05/06/job-hunting-Tokyo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhao Fengbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zhao's Notebook">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/06/job-hunting-Tokyo/" itemprop="url">东京码农求职记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-06T18:47:03+09:00">2019-05-06</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Engineer/" itemprop="url" rel="index"><span itemprop="name">Engineer</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/05/06/job-hunting-Tokyo/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2019/05/06/job-hunting-Tokyo/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="before-reading"><a href="#Before-Reading" class="headerlink" title="Before Reading"></a>Before Reading</h2><p>本文仅通过作者经历和个人看法对于东京计算机/互联网学生应届求职给出一些经验性描述和包含个人感情色彩的建议和评论，希望读者结合自身和环境的实际情况进行批判性思考。在此抛砖引玉，欢迎读者在下方评论添加更多地信息，或发布自身的经验。After all, community is you and me and everyone.</p>
+<h2 id="why-write-this"><a href="#Why-Write-This" class="headerlink" title="Why Write This"></a>Why Write This</h2><blockquote>
+<p>要恰饭的嘛！              —— yyf</p>
+</blockquote>
+<p>对于大部分在东京读计算机硕士的小码农来说，找工作几乎是每个人毕业前最头疼的事。东京又是个非常奇特的城市，同样是东大码农，收入低起年收400万，高至超越1200万，一切皆有可能。但是东京的许多大学，据我所知，学校就业处的信息可以说是一无是处，无法对小码农就职提供足够的帮助（主要还是因为学校一般把情报理工算在工学部里，和工学部一起提供信息，而忽视了计算机行业近几年翻天覆地的变化）。</p>
+<p>同时，东京的码农职位又处于一个十分奇妙的环境下，年功序列的百年老店，咨询服务，金融技术，硅谷互联网，同时存在于东京码农的招聘市场，而且分别有一套互不兼容的招聘流程。在这篇博客中，读者很容易就会发现，我自己也并没有（也实在做不到）参与所有类型的公司招聘，仅仅能对博主自身经历过的一些求职活动进行详细的论述（并包含强烈的个人感情色彩，希望读者可以自行甄别），对于博主没有亲身经历的部分，只能通过资料和道听途说（主要来源于和其他认识的求职学生谈天说地）进行论述，对于观点的客观性，资料的准确性和时效性都不作保证。</p>
+<p>不过由于 1.大数定律，足够多的样本中的噪声服从正态分布。 2.大多数的超线性回归模型都可以对包含正态分布噪声的样本进行无偏预测。 因此写这篇博客并非毫无意义，希望读者可以多多寻找其他资料，理性分析理性看待，数据越多，预测越准。</p>
+<p>这篇博文将结合我自身经历，概述日本东京应届毕业生在计算机领域的求职情况，以及对如何做准备做一些微小的建议。</p>
+<p>同时希望读者可以理解，找工作本身是一个主观性极强的小马过河式的问题，有的技巧对我来说和吃饭一样自然，但是对一些朋友来说可能是需要艰苦训练才能获得。同时对于有的朋友来说易如反掌的事情，我本人怎么都做不好。这是十分正常且普遍存在的现象，希望读者能够充分发挥主观能动性，对自己进行切实的分析。</p>
+<h2 id="about-me"><a href="#About-Me" class="headerlink" title="About Me"></a>About Me</h2><p>正如前文所言，找工作本身是一个小马过河的问题，我只能尽可能地量化我自己能量化的指标，以期读者可以尽可能获得一个客观的自我评估体系。但是出于隐私考虑，依旧有一些信息我无法公布，还请谅解。</p>
+<p>我的教育经历为：北京航空航天大学本科软件工程专业，东京大学大学院情报理工学系研究科Computer Science(CS)专攻修士（硕士）。</p>
+<p>我有两段国内创业公司的实习经历，总时长2年。来东京之后打了一段时间的Kaggle，拿了两块铜牌，达到了Kaggle Expert。目前没有论文发表。</p>
+<p>我的语言能力是：中文（Native Speaker(废话)），英语（托福ibt 103），日语（N1 合格），俄语（看过书听过歌，别问，问就是до свидания）。</p>
+<p>在这一就职季中，我侥幸获得了Amazon.co.jp的 SDE offer，薪资水平高的一度让我乐得合不拢嘴。从前文可以看出，我本人算不上大神，也算不得弱鸡。这应该就是一个普通人稍作准备就能获得的offer水平。</p>
+<h2 id="about-some-rumors"><a href="#About-Some-Rumors" class="headerlink" title="About Some Rumors"></a>About Some Rumors</h2><p>几经思考，我决定把这一段写在最前面，因为我发现在日本计算机求职这件事情上，中文互联网的消息几乎都包含几个十分错误，甚至会对不了解的人有毁灭性误导的谣言。因此我想先把这几个很常见的谣言拿出来单独说一下，希望大家仔细辨别，好好斟酌。</p>
+<h3 id="文科生也能写代码"><a href="#文科生也能写代码" class="headerlink" title="文科生也能写代码"></a>文科生也能写代码</h3><p>从逻辑的角度上来讲，这句话毫无问题。但是在中文互联网常见的语境下，这一句话指日本码农求职市场普遍不要求计算机专业知识，公司包培训包工作。这一点即使不能算完全错误，也与事实，或者说人们的期望相去甚远。事实上，不要求专业知识的日本企业大多数本质上和国内的外包公司没有区别，只是把自己报培训班的工夫挪到了公司里而已。但是其背后的高强度，低价值劳动的本质，通常恶劣而没有尊严的工作环境，看不到出路的职业生涯发展是如出一辙的，希望各位同学谨慎谨慎再谨慎，牢记天上没有免费的馅饼这一基本事实。</p>
+<h3 id="日本写代码工资就那样和所有行业都差不多"><a href="#日本写代码工资就那样，和所有行业都差不多" class="headerlink" title="日本写代码工资就那样，和所有行业都差不多"></a>日本写代码工资就那样，和所有行业都差不多</h3><p>日本应届生薪资是有名的平均主义，似乎只有在商、法、医、税这几个传统贵族行业才能免俗。然而近年来，随着日本经济和社会的改革，尤其是就职市场的改革，再加上美国互联网公司的疯狂冲击（中国带来的冲击也有一些，但不明显），码农的薪资水平开始逐年甩开其他行业，逐渐向贵族行业靠拢，因此一些努力，一些聪明的选择，还有成吨的运气，码农是能够达到让其他人瞠目结舌的应届生收入的，切不可自暴自弃。</p>
+<h2 id="les-trois-mousquetaires-三个火枪手"><a href="#Les-Trois-Mousquetaires-《三个火枪手》" class="headerlink" title="Les Trois Mousquetaires (《三个火枪手》)"></a>Les Trois Mousquetaires (《三个火枪手》)</h2><p>码农们的就职去向可以说很宽，也可以说很窄，取决于个人对于职业的挑剔程度。如果完全不挑剔的话，总计有四个可能的公司去向：传统日企，日本新兴互联网，外资互联网，咨询、金融的技术部。</p>
+<h3 id="传统日企"><a href="#传统日企" class="headerlink" title="传统日企"></a>传统日企</h3><p>传统日企的IT就职和其他专业的就职没有任何不同，典型的日式平均主义。</p>
+<p>Pros:不太可能被裁员。</p>
+<p>Cons:其他所有。</p>
+<h3 id="日本新兴互联网"><a href="#日本新兴互联网" class="headerlink" title="日本新兴互联网"></a>日本新兴互联网</h3><p>其实这一类才是在日本做码农的主要去向，从小一点的各类中型企业（Fixstars, mixi），到日本的大型互联网企业（LINE，DeNA，Yahoo! Japan），还有明星独角兽（Preferred Networks, Mercari)，应有尽有。待遇水平也是从低到高一应俱全。</p>
+<p>Pros:   收入普遍高于传统日企。<br>        有一定的技术水平和技术积累。<br>        相对健全的职业体系。</p>
+<p>Cons:   主要面试、工作语言是日语。有的公司有英语招聘项目，但是不会日语总的来说会是减分项。<br>        虽然在日本算是大型公司，但是和全球巨头比起来各方面差距相当大。差距从薪酬到职业生涯发展存在于几乎所有方面内。</p>
+<h3 id="外资互联网"><a href="#外资互联网" class="headerlink" title="外资互联网"></a>外资互联网</h3><p>在日本招聘的外资互联网少得可怜，例如Google最大的对手Facebook在日本就不招聘技术岗位。在日本进行校招的外资公司有：Google, Microsoft, Amazon, Indeed. Apple在日本主要招硬件，不怎么招软件。</p>
+<p>Pros:   在日本打工族里算最高一级的收入水平。全球领先的技术。完善、健全、全球一流的人才培养方案和职业体系。纯英语的招聘流程和英语为主的工作环境。Transfer去其他国家、地区的机会。</p>
+<p>Cons:   和湾区或者西雅图总部的人比起来，你的钱是比较少的，容易吃柠檬。日本分部组、话语权都有限，这些都有能制约你的职业发展。每年招聘人数很少，因此竞争很激烈（也很玄学）。</p>
+<h3 id="咨询-金融"><a href="#咨询、金融" class="headerlink" title="咨询、金融"></a>咨询、金融</h3><p>包括埃森哲，高盛在内的一些咨询、金融企业。这里列出来仅仅是为了说明有这些公司在招聘，但是具体如何我完全不知道，因为我一不做咨询（不能写代码），二不去金融（就是不喜欢）。读者要想了解这方面的信息只能自己想想法。。。</p>
+<h2 id="what-to-expect"><a href="#What-to-Expect" class="headerlink" title="What to Expect"></a>What to Expect</h2><p>可能是由于中文互联网上对于日本IT业界的信息普遍滞后，许多朋友对于在日本做IT的正常收入、福利水平不甚了解。正所谓知己知彼，百战不殆，博主在这里粗浅的列出一些大概的数据，同时推荐一个日本网站，叫<a href="https://www.vorkers.com/" target="_blank" rel="noopener">Vokers</a>，类似于日本的<a href="https://www.glassdoor.com/" target="_blank" rel="noopener">glassdoor</a>，是雇员对于雇主的评价网站，可以在找工作和评价收入的时候进行参考。</p>
+<h3 id="年收"><a href="#年收" class="headerlink" title="年收"></a>年收</h3><blockquote>
+<p>柠檬树上柠檬果，柠檬树下你和我。</p>
+</blockquote>
+<p>以下所列薪资均为应届毕业生税前收入。</p>
+<p>普通日企：300~400w</p>
+<p>互联网日企：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>公司名</th>
+<th>年收</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Yahoo! Japan</td>
+<td>400~500w</td>
+</tr>
+<tr>
+<td>Line</td>
+<td>550~600w</td>
+</tr>
+<tr>
+<td>DeNA</td>
+<td>500w</td>
+</tr>
+<tr>
+<td>CyberAgent</td>
+<td>500w</td>
+</tr>
+<tr>
+<td>Preferred Networks</td>
+<td>800~1200w</td>
+</tr>
+<tr>
+<td>Mercari</td>
+<td>700 ~ 900w</td>
+</tr>
+<tr>
+<td>Mixi</td>
+<td>400w</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>以上数据来源模糊（样本数量太少），是我个人的印象数据。具体情况还请谨慎参考。</p>
+<p>外资巨头：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>公司名</th>
+<th>年收</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Google</td>
+<td>900w ~ 1500w</td>
+</tr>
+<tr>
+<td>Microsoft</td>
+<td>700w ~ 900w</td>
+</tr>
+<tr>
+<td>Amazon</td>
+<td>800w ~ 900w</td>
+</tr>
+<tr>
+<td>Indeed</td>
+<td>1000w ~ 1200w</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="work-life-balance"><a href="#Work-Life-Balance" class="headerlink" title="Work-Life Balance"></a>Work-Life Balance</h3><p>总体来说，外资企业比日企要良心许多，得益于其全球统一的福利政策和科学高效的管理模式，很少能找到比外资巨头更有work-life balance的公司（除了Amazon，Oncall减分很多）。</p>
+<p>日系企业各有各的不同。基本遵循给钱多的事儿也多的模式，但是还是不敢像国内996那样折腾，各个公司的加班时间依旧可以在<a href="https://www.vorkers.com/" target="_blank" rel="noopener">Vokers</a>上查到。需要指出的是，月均加班在40小时以上的公司已经相当高的加班度了，但是也很少有在20小时以内的公司，所以工作强度差别也并不是很大。</p>
+<p>对于一些不太了解码农就职行情的同学，这里需要指出一个常见误区：许多人会说，薪酬不重要，重要的是学到东西和发展空间。这里把薪酬和发展对立起来，就是和现实不太符合的说法。在计算机行业，普遍而言，你最能学到东西的地方，就是那些给你钱给的最多的地方。所谓的在收入和发展中斟酌，也是指FLAANG(+Microsoft)和独角兽创业公司/即将上市的新兴巨头（Uber, Airbnb, Pinterest）中斟酌，而上述所有公司，给钱都很大方，区别只在于股票能不能发财。然而在日本，几乎没有后者可选，所以能去Microsoft, Apple, Google, Amazon, Indeed，实在是想不出不去的理由。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>这一篇主要对于日本IT就职进行了客观和主观的综述，希望能够对于大家了解日本IT就职有所帮助。在下一篇博客中，我会详细的叙述我个人对于如何具体准备日企就职的一些建议的和看法。但是需要提出的是，因为我个人完全偏向于美国互联网公司的就职，因此对于其他公司的就职准备可能（几乎肯定）有不了解的地方，希望读者能独立思考，积极沟通。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://johnkyon.github.io/2019/03/31/kick/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhao Fengbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zhao's Notebook">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/31/kick/" itemprop="url">Kick Start2019 Round A Question A. Training</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-31T23:07:37+09:00">2019-03-31</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/31/kick/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2019/03/31/kick/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>As the football coach at your local school, you have been tasked with picking a team of exactly P students to represent your school. There are N students for you to pick from. The i-th student has a skill rating Si, which is a positive integer indicating how skilled they are.</p>
+<p>You have decided that a team is fair if it has exactly P students on it and they all have the same skill rating. That way, everyone plays as a team. Initially, it might not be possible to pick a fair team, so you will give some of the students one-on-one coaching. It takes one hour of coaching to increase the skill rating of any student by 1.</p>
+<p>The competition season is starting very soon (in fact, the first match has already started!), so you&#39;d like to find the minimum number of hours of coaching you need to give before you are able to pick a fair team.</p>
+<h2 id="input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>The first line of the input gives the number of test cases, T. T test cases follow. Each test case starts with a line containing the two integers N and P, the number of students and the number of students you need to pick, respectively. Then, another line follows containing N integers Si; the i-th of these is the skill of the i-th student.</p>
+<h2 id="output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>For each test case, output one line containing <code>Case #x: y</code> , where x is the test case number (starting from 1) and y is the minimum number of hours of coaching needed, before you can pick a fair team of P students.</p>
+<h2 id="sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h2><p>Input<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">4 3</span><br><span class="line">3 1 9 100</span><br><span class="line">6 2</span><br><span class="line">5 5 1 2 3 4</span><br><span class="line">5 5</span><br><span class="line">7 7 1 7 7</span><br></pre></td></tr></table></figure></p>
+<p>Output </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Case #1: 14</span><br><span class="line">Case #2: 0</span><br><span class="line">Case #3: 6</span><br></pre></td></tr></table></figure>
+<h2 id="solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>This is another question that requires a certain property in a fixed amount of elements among a long array. For this kind of problem, it&#39;s pretty natural to think that a sliding window would be a great solution, for most time, a sliding window algorithm only takes O(n) time.</p>
+<p>Back to this problem, it&#39;s easy to think that if we put all the players with similar ability together would result in a smaller training time, and to do so, we want the array to be sorted.</p>
+<p>The algorithm is split into two parts: Sort the array and track the training time required.</p>
+<p>Say we have a window starting at index <script type="math/tex">i</script>, and we know the training time for it is <script type="math/tex">A_i</script>. We also know the the last element of this window is <script type="math/tex">a_{i+k-1}</script>, and the first element is <script type="math/tex">a_i</script>. What&#39;s the training time for the next window? The answer is <script type="math/tex">A_{i+1} = (A_i - (a_{i+k-1} - a_i) + (a_{i+k} - a{i+k-1} * (k-1))</script> . Notice that <script type="math/tex">a_{i+k}</script> is the new highest number.</p>
+<p>Do also be aware that the number may overflows Integer, use Long instead. The code is as below:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SolutionA</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">long</span> <span class="title">train</span><span class="params">(<span class="keyword">long</span>[] nums, <span class="keyword">int</span> n, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        Arrays.sort(nums);</span><br><span class="line">        <span class="keyword">long</span> window = <span class="number">0l</span>;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">long</span> high = nums[k-<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span> (i=<span class="number">0</span>; i&lt;k; i++) &#123;</span><br><span class="line">            window += high - nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">long</span> ans = window;</span><br><span class="line">        <span class="keyword">long</span> prevHigh = high;</span><br><span class="line">        <span class="keyword">for</span>(; i&lt;n; i++) &#123;</span><br><span class="line">            high = nums[i];</span><br><span class="line">            window -= prevHigh - nums[i-k];</span><br><span class="line">            window += (high - prevHigh) * (k-<span class="number">1</span>);</span><br><span class="line">            ans = Math.min(ans, window);</span><br><span class="line">            prevHigh = high;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://johnkyon.github.io/2018/12/06/python2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhao Fengbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zhao's Notebook">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/06/python2/" itemprop="url">Data Model, Special Methods</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-06T22:39:46+09:00">2018-12-06</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/06/python2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/12/06/python2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>In the last <a href="/2018/10/28/python1/" title="blog">blog</a>, we had a slight feeling about the magical things that special methods can do. This time, we&#39;ll talk deeper into how to use those special methods.</p>
+<h2 id="12-how-to-use-special-methods"><a href="#1-2-How-to-Use-Special-Methods" class="headerlink" title="1.2 How to Use Special Methods"></a>1.2 How to Use Special Methods</h2><blockquote>
+<p>Specially, we have to be clear that, special methods are designed to be called by Python interpreter, and not by YOU.</p>
+</blockquote>
+<p>In most cases, we don&#39;t write something like <strong>my_object.__len__()</strong>. Just like we mentioned, everything in Python is trying to stay in consistency, so when we write <strong>len(my_object)</strong>, and the <strong>my_object</strong> is a user<em>defined class, Python will call the **\</em>_len__()** instance method you implemented. Again, such consistency is the key point that Python can get rid of a huge mess.</p>
+<p>Even more, for some built-in types like <strong>list, str, bytearray</strong>, and so on, the interpreter may take some short-cut when a special function is called. For example, the CPython implementation of <strong>len()</strong> actually returns the value of <strong>ob_size</strong> field in the <strong>PyVarObject</strong> C struct, that represents the variable-size built-in object in memory. Of course this is much faster than calling a method.</p>
+<p>More often than not, the calling of special methods is implicit. Like <strong>for i in x:</strong>, indeed it cause the invocation of <strong>iter(x)</strong>, which in turn may call <strong>__iter__()</strong> if it&#39;s available. (This also indicates that, if we implemented our own <strong>__iter__()</strong> in our user-defined class, we may use <strong>for i in my_object:</strong>), see an example!</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span>:</span></span><br><span class="line"><span class="meta">... </span>    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, n)</span>:</span></span><br><span class="line"><span class="meta">... </span>        self.a = []</span><br><span class="line"><span class="meta">... </span>        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, n):</span><br><span class="line"><span class="meta">... </span>            self.a.append(i)</span><br><span class="line"><span class="meta">... </span>    </span><br><span class="line"><span class="meta">... </span>    <span class="function"><span class="keyword">def</span> <span class="title">__iter__</span><span class="params">(self)</span>:</span></span><br><span class="line"><span class="meta">... </span>        curr = <span class="number">0</span></span><br><span class="line"><span class="meta">... </span>        <span class="keyword">while</span> curr &lt; len(self.a):</span><br><span class="line"><span class="meta">... </span>            <span class="keyword">yield</span> self.a[curr]</span><br><span class="line"><span class="meta">... </span>            curr += <span class="number">1</span></span><br><span class="line"><span class="meta">... </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>my_object = MyClass(<span class="number">3</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> ele <span class="keyword">in</span> my_object:</span><br><span class="line"><span class="meta">... </span>    print(ele)</span><br><span class="line"><span class="meta">... </span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>Simply by implementing a <strong>__iter__()</strong>, we made our user-defined class supporting the most frequently used built-in syntax.</p>
+<p>Normally, your code should not call those special methods directly too often. Unless you&#39;re doing metaprogramming, you should be implementing those special methods much more often than invoking them explicitly. Perhaps the only special methods that you may call frequently is the <strong>__init__()</strong>, to invoke the initializer of a superclass in your own <strong>__init__()</strong> implementation.</p>
+<p>If you want to use a special method, it is recommended that call them by calling the built-in functions (e.g, <strong>len, iter, str</strong>, etc). There functions does the job you want them to do, normally with some extra benefits. And for some built-in class, they can be faster (like the <strong>len()</strong> we introduced just now).</p>
+<p>Besides, please avoid adding custom special methods arbitrarily. The name like <strong>__foo()__</strong> may haven&#39;t been occupied now, but who knows about the future?</p>
+<h2 id="121-emulating-numeric-types"><a href="#1-2-1-Emulating-Numeric-Types" class="headerlink" title="1.2.1 Emulating Numeric Types"></a>1.2.1 Emulating Numeric Types</h2><p>Several special methods allow user object to respond to operators such as +. We&#39;ll go through a simple example to see how special methods works.</p>
+<p>We&#39;ll implement a class to represent two-dimensional vectors (and more dimensions in the future). The built-in <strong>complex</strong> type can be used to represent two dimensional vectors, but when talking about more dimensions, we&#39;ll need our own class, and we want them to support built-in operators. Here&#39;re how we do it.</p>
+<p>We will start by designing the API for such a class by writing a simulated console session that we use later as a doctest. Here&#39;s what we want.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = Vector(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = Vector(<span class="number">2</span>, <span class="number">1</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a + b</span><br><span class="line">Vector(<span class="number">3</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<p>The <strong>abs</strong> built-in function returns the absolute value of integers and floats, and magnitude of <strong>complex</strong> numbers. So to be consistent, our API should use <strong>abs</strong> to calculate the magnitude of a vector:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>v = Vector(<span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>abs(v)</span><br><span class="line"><span class="number">5.0</span></span><br></pre></td></tr></table></figure>
+<p>And also the * operator for scalar multiplication (Notice, this is not a dot multiplication for two vectors)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>v * <span class="number">3</span></span><br><span class="line">Vector(<span class="number">9</span>, <span class="number">12</span>)</span><br></pre></td></tr></table></figure>
+<p>Also notice that, the printed information is under user definition. It&#39;s pretty simple to make it, just implement a special method called <strong>__repr__()</strong>.</p>
+<p>So, all in all, in order to make all the functions above work, the special methods we need to implement are: <strong>__repr__(), __abs__(), __add__()</strong>, and  <strong>__mul__()</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Vector</span>:</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x=<span class="number">0</span>, y=<span class="number">0</span>)</span>:</span></span><br><span class="line">        self.x = x</span><br><span class="line">        self.y = y</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__repr__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Vector(%r, %r)"</span> % (self.x, self.y)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__abs__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> hypot(self.x, self.y)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__bool__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> bool(abs(self))</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__add__</span><span class="params">(self, other)</span>:</span></span><br><span class="line">        x = self.x + other.x</span><br><span class="line">        y = self.y + other.y</span><br><span class="line">        <span class="keyword">return</span> Vector(x, y)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__mul__</span><span class="params">(self, scalar)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> Vector(self.x * scalar, self.y * scalar)</span><br></pre></td></tr></table></figure>
+<p>Although there 6 special methods in the code, but none of them will be invoked by in it&#39;s own code( except for <strong>__init__()</strong>). Even some other code may want to use these methods, they don&#39;t explicitly call them, just like what we can see in the console listings. Then let&#39;s discuss the code for each special method.</p>
+<h3 id="122-string-representation"><a href="#1-2-2-String-representation" class="headerlink" title="1.2.2 String representation."></a>1.2.2 String representation.</h3><p>The <strong>__repr__()</strong> is called by the <strong>repr</strong> built-in to get the string presentation of the instance for inspection. If we didn&#39;t implement it, the string returned would look like something like this:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>Vector(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">&lt;Vector object at <span class="number">0x10e380400</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>The string returned by <strong>__repr__()</strong> should be unambiguous, and, if possible, match the source code necessary to re-create the object being represented. This is why the our <strong>__repr__()</strong> would return a string looks calling the constructor of the class.</p>
+<p>There&#39;s a similar special method called <strong>__str__()</strong>, which is called by the <strong>str()</strong> constructor and implicitly used by the print function. Basically, <strong>__str__()</strong> should return a string suitable for display to end users.</p>
+<p>When you only implement one of the both, implement <strong>__repr__()</strong>, because Python will call <strong>__repr__()</strong> when <strong>__str__()</strong> is not available as a fallback.</p>
+<h3 id="123-arithmetic-operators"><a href="#1-2-3-Arithmetic-Operators" class="headerlink" title="1.2.3 Arithmetic Operators"></a>1.2.3 Arithmetic Operators</h3><p>We&#39;ve already seen how to implement our own + and <em> by implementing <strong>__add__</strong> and <em>*__mul__</em></em>. Note that, in both cases, the original object is not changed, and the method returned a new instance of the class. The principal of infix operators is to create new objects and leave the parameters untouched.</p>
+<h3 id="124-boolean-value-of-a-custom-type"><a href="#1-2-4-Boolean-Value-of-a-Custom-Type" class="headerlink" title="1.2.4 Boolean Value of a Custom Type"></a>1.2.4 Boolean Value of a Custom Type</h3><p>Although we have boolean type in Python, almost any object can be applied to a boolean context, such as a expression controlled by <strong>if</strong> or <strong>while</strong>. To do so, python will call <strong>bool(x)</strong>, and it only returns either <strong>True</strong> or <strong>False</strong>.</p>
+<p>By default, an instance of our self-defined class is always <strong>True</strong>, unless we implemented the <strong>__bool__</strong> or <strong>__len__</strong>. <strong>bool(x)</strong> basically calls <strong>x.__bool__()</strong> and returns the result. If it&#39;s not implemented, Python would try to invoke <strong>x.__len__()</strong> instead. If it returns 0, then <strong>False</strong>; Otherwise, <strong>True</strong>.</p>
+<h3 id="more-special-methods"><a href="#More-Special-Methods" class="headerlink" title="More Special Methods."></a>More Special Methods.</h3><p>The special methods are list in <a href="https://docs.python.org/3/reference/datamodel.html#specialnames" target="_blank" rel="noopener">Python official site</a>. Check them!</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://johnkyon.github.io/2018/10/28/python1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhao Fengbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zhao's Notebook">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/28/python1/" itemprop="url">Data Model in Python</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-28T23:36:18+09:00">2018-10-28</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/28/python1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/10/28/python1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>One of the best qualities of Python is its consistency.</p>
+<p align="right">Luciano Ramalho, author of Fluent Python: Clear, Concise, and Effective Programming</p>
+
+</blockquote>
+<p>By the first time I read this sentence, all I felt was wired. As we all know, Python is a dynamically-typed language, you can never succeed in guessing the class or type of a variable. So at least, in terms of type, Python is far from consistent. However, soon I understand the meaning of consistency in Python: Nothing is special. Here, we&#39;re going to see several examples and understand what <em>&quot;consistency&quot;</em> really means in Python.</p>
+<blockquote>
+<p>Note: In Python, we&#39;re going to meet a lot of methods that looks like <strong>__getitem__</strong>, and we&#39;ll call them <em>&quot;dunder_getitem&quot;</em> (dunder means double-under). And also notice that, double under like <strong>__x</strong> has other meanings in Python, and please don&#39;t mess up with them.</p>
+</blockquote>
+<p>It&#39;s very important to implement those methods that can be called by the framework itself, we&#39;re going to show you how to implement two special methods called <strong>__getitem__</strong> and <strong>__len__</strong>.</p>
+<h2 id="11-pythonic-cards"><a href="#1-1-Pythonic-Cards" class="headerlink" title="1.1 Pythonic Cards"></a>1.1 Pythonic Cards</h2><p>Code 1-1: Cards with order.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"></span><br><span class="line">card = collections.namedtuple(<span class="string">'Card'</span>, [<span class="string">'rank'</span>, <span class="string">'suit'</span>])</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FrenchDeck</span>:</span></span><br><span class="line">    ranks = [str(n) <span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">2</span>, <span class="number">11</span>)] + list(<span class="string">'JQKA'</span>)</span><br><span class="line">    suits = <span class="string">'spades diamonds clubs hearts'</span>.split()</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self._cards = [Card(rank, suit) <span class="keyword">for</span> suit <span class="keyword">in</span> self.suits</span><br><span class="line">                                        <span class="keyword">for</span> rank <span class="keyword">in</span> self.ranks]</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__len__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> len(self._cards)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self, position)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self._cards[position]</span><br></pre></td></tr></table></figure></p>
+<p>Now, let&#39;s look at the <strong>FrenchDeck</strong> class. It&#39;s short and powerful. First of all, like any Python standard collection class, we can use <strong>len()</strong> function to check how many cards in it:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>deck = FrenchDeck()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>len(deck)</span><br><span class="line"><span class="number">52</span></span><br></pre></td></tr></table></figure></p>
+<p>We can also pick any specific card in the cards using <strong>[ ]</strong> like the following code:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>deck[<span class="number">0</span>]</span><br><span class="line">Card(rank=<span class="string">'2'</span>, suit=<span class="string">'spades'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>deck[<span class="number">-1</span>]</span><br><span class="line">Card(rank=<span class="string">'A'</span>, suit=<span class="string">'hearts'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>The more interesting thing is that, we don&#39;t need to write a new function to randomly pick a card, Python already had a function called <strong>random.choice</strong> to do the job, and we can just use it on the instance of our cards.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> random <span class="keyword">import</span> choice</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>choice(deck)</span><br><span class="line">Card(rank=<span class="string">'4'</span>, suit=<span class="string">'spades'</span>)</span><br></pre></td></tr></table></figure>
+<p>See! We already benefit from implementing special methods to use Python data model:</p>
+<ul>
+<li>The users of your class doesn&#39;t need to remember many different names of a standard manipulation (<strong>sizeof()</strong> or <strong>length()</strong> or something else).</li>
+<li>Just use Python standard library, no need for re-inventing the wheels.</li>
+</ul>
+<p>Even more, since <strong>__getitem__</strong> hands <strong>[ ]</strong> manipulation to <strong>self._cards</strong> list, so our <strong>deck</strong> class automatically supports slicing. See below:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>deck[: <span class="number">3</span>]</span><br><span class="line">[Card(rank=<span class="string">'2'</span>, suit=<span class="string">'spades'</span>),</span><br><span class="line"> Card(rank=<span class="string">'3'</span>, suit=<span class="string">'spades'</span>),</span><br><span class="line"> Card(rank=<span class="string">'4'</span>, suit=<span class="string">'spades'</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>deck[<span class="number">12</span>:: <span class="number">13</span>]</span><br><span class="line">[Card(rank=<span class="string">'A'</span>, suit=<span class="string">'spades'</span>),</span><br><span class="line"> Card(rank=<span class="string">'A'</span>, suit=<span class="string">'diamonds'</span>),</span><br><span class="line"> Card(rank=<span class="string">'A'</span>, suit=<span class="string">'clubs'</span>),</span><br><span class="line"> Card(rank=<span class="string">'A'</span>, suit=<span class="string">'hearts'</span>)]</span><br></pre></td></tr></table></figure>
+<p>The second function means that, pick all cards that has index 12, and pick one in every 13 cards.</p>
+<p>And even more! Just by implementing <strong>__getitem__</strong> method, the cards become iterable:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> card <span class="keyword">in</span> deck: <span class="comment"># doctest: +ELLIPSIS</span></span><br><span class="line"><span class="meta">... </span>    print(card)</span><br><span class="line">Card(rank=<span class="string">'2'</span>, suit=<span class="string">'spades'</span>)</span><br><span class="line">Card(rank=<span class="string">'3'</span>, suit=<span class="string">'spades'</span>)</span><br><span class="line">Card(rank=<span class="string">'4'</span>, suit=<span class="string">'spades'</span>)</span><br><span class="line">Card(rank=<span class="string">'5'</span>, suit=<span class="string">'spades'</span>)</span><br><span class="line">...v</span><br></pre></td></tr></table></figure></p>
+<p>Just by implementing <strong>__getitem__</strong> and <strong>_\len__</strong> methods, <strong>FrenchDeck</strong> class is just like any sequential data model in Python, showing core features of Python (like iterating and slicing). It can also be used for standard libraries like <strong>random.choice</strong>, <strong>reversed</strong> and <strong>sorted</strong>.</p>
+<p>Here, we see how consistency exists in Python, and definitely we can write more elegant and pythonic code by implementing these special methods.</p>
+<p>However, our cards still cannot be shuffled so far. We&#39;ll not talk about it now, although it&#39;s easy enough to be implemented by a single line of code in <strong>__setitem__</strong>, it influences more important things and we&#39;ll talk about them together.</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://johnkyon.github.io/2018/10/28/python0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhao Fengbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zhao's Notebook">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/28/python0/" itemprop="url">Python, Deeper Understanding</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-28T21:32:18+09:00">2018-10-28</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/28/python0/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/10/28/python0/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>Here&#39;s the plan: when someone uses a feature you don&#39;t understand, simply shoot them. This is easier than learning something new, and before too long the only living coders will be writing in an easily understood, tiny subset of Python 0.9.6 (wink).</p>
+<p align="right">Tim Peters, Legendary Core developer and author of The Zen of Python</p>
+
+</blockquote>
+<hr>
+<p>Sadly, I&#39;ve been one of those &quot;shooters&quot; for a long time. I&#39;ve been writing Python code for around four years on many different tasks. From back-end server that provide service to many clients, to playing Kaggle competitions, Python has always been one of the most frequently used languages and I do really like it in most cases (however, there&#39;re also some cases that I really messed up with it). Looking back in those code I&#39;ve written, I start to think, are they elegant enough? The answer is definitely NO. The python provided multiple interesting and power features that is different from C++ and JAVA, but I never used them. </p>
+<p>Since I would work with Python for a long time in the coming future, I&#39;d better learn more about Python and try to write more pythonic code. Besides, the Zen of Python is influencing the design of many other languages, understanding more about the successful language would benefit those who like and enjoy programming.</p>
+<p> This series would be a memo and conclusion of Python, basically Python 3.6, mainly talking about more advanced Python features, so before reading it, you are thought to have experience of programming Python, be able to write, read and understand basic Python code. This series is for those who want to go further and write more elegant (pythonic?) code. Discussion and comments are welcomed.</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://johnkyon.github.io/2018/08/30/leetcode753/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhao Fengbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zhao's Notebook">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/30/leetcode753/" itemprop="url">Leetcode753. Cracking the safe</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-30T22:16:49+09:00">2018-08-30</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/30/leetcode753/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/08/30/leetcode753/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>This is a programming problem on leetcode, and the interesting part is, it can be solved with two different points of<br>view. We&#39;re going to analyze the problem, prove some properties and lemma before we use them, at last write them into code.<br>The problem is as below:</p>
+<h2 id="leetcode753-cracking-the-safe"><a href="#Leetcode-753-Cracking-the-Safe" class="headerlink" title="Leetcode.753. Cracking the Safe"></a>Leetcode.753. Cracking the Safe</h2><p>There is a box protected by a password. The password is <strong>n</strong> digits, where each letter can be one of the first <strong>k</strong> digits <strong>0, 1, ..., k-1</strong>.</p>
+<p>You can keep inputting the password, the password will automatically be matched against the last <strong>n</strong> digits entered.</p>
+<p>For example, assuming the password is <strong>&quot;345&quot;</strong>, I can open it when I type <strong>&quot;012345&quot;</strong>, but I enter a total of 6 digits.</p>
+<p>Please return any string of minimum length that is guaranteed to open the box after the entire string is inputted.</p>
+<h2 id="approach-1-graph-theory"><a href="#Approach-1-Graph-Theory" class="headerlink" title="Approach #1: Graph Theory."></a>Approach #1: Graph Theory.</h2><p>It&#39;s easy to take this problem as a graph theory, Let&#39;s take any number with <strong>n-1</strong> digits as a vertex, to form a single and unique trial of the password, we extend a edge from this node, forming a <strong>n</strong> digits number. It also leads to the new node that was indicated by it&#39;s [1:n] digits. So this problem is turned in to a graph problem defined as below:</p>
+<p><em>Given a directed graph with $k^{n-1}$ nodes, each nodes has $k$ edges, pointed to another node. Find a path that visits every edges exactly once.</em></p>
+<p>Sounds familiar, right? This is a very classic question in graph theory, called <a href="https://en.wikipedia.org/wiki/Eulerian_path" target="_blank" rel="noopener">Eulerian path</a>. By definition, a Eulerian path is a trail in a finite graph which visits every edges exactly once. Eulerian cycle is an Eulerian path that starts and ends at the same vertex. Eulerian path and Eulerian cycle have following properties:</p>
+<ul>
+<li>An undirected graph has an Eulerian cycle if and only if every vertex has even degree, and all of its vertices with nonzero degree belong to a single connected component.</li>
+<li>A directed graph has an Eulerian cycle if and only if every vertex has equal in degree and out degree, and all of its vertices with nonzero degree belong to a single strongly connected component.</li>
+</ul>
+<p>Both properties are easy to prove: For the first property, for each node, it must have an edge in and an edge out, to form a Eulerian path. For the second property, it&#39;s still the same: for each node, one in, one out.</p>
+<p>To solve this problem, we have a theory called <em>Hierholzer&#39;s Algorithm</em>. The algorithm goes as follows:</p>
+<ul>
+<li>Starting from a vertex u, we walk through (unvisited) edges until we get stuck. Because the in-degrees and out-degrees of each node are equal, we can only get stuck at u, which forms a cycle.</li>
+<li>Now, for any node v we had visited that has unvisited edges, we start a new cycle from v with the same procedure as above, and then merge the cycles together to form a new cycle.</li>
+</ul>
+<p>An figure below may helps you to understand the procedure.<br><img src="/images/leetcode753_1.png" alt=""></p>
+<p>Now the problem seems easy to solve. All we need to do is track every edge and mark them as visited. To prevent us from getting stuck (So we don&#39;t need extra memory to store unvisited edges), we start from 000...0, and go to the next node from k-1 to 0. The code is as followed:</p>
+<p><em>java</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    Set&lt;String&gt; seen;</span><br><span class="line">    StringBuilder ans;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">crackSafe</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">1</span> &amp;&amp; k == <span class="number">1</span>) <span class="keyword">return</span> <span class="string">"0"</span>;</span><br><span class="line">        seen = <span class="keyword">new</span> HashSet();</span><br><span class="line">        ans = <span class="keyword">new</span> StringBuilder();</span><br><span class="line"></span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n-<span class="number">1</span>; ++i)</span><br><span class="line">            sb.append(<span class="string">"0"</span>);</span><br><span class="line">        String start = sb.toString();</span><br><span class="line"></span><br><span class="line">        dfs(start, k);</span><br><span class="line">        ans.append(start);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> String(ans);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dfs</span><span class="params">(String node, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> x = <span class="number">0</span>; x &lt; k; ++x) &#123;</span><br><span class="line">            String nei = node + x;</span><br><span class="line">            <span class="keyword">if</span> (!seen.contains(nei)) &#123;</span><br><span class="line">                seen.add(nei);</span><br><span class="line">                dfs(nei.substring(<span class="number">1</span>), k);</span><br><span class="line">                ans.append(x);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="approach-2-inverse-burrows-wheeler-transform"><a href="#Approach-2-Inverse-Burrows-Wheeler-Transform" class="headerlink" title="Approach #2: Inverse Burrows-Wheeler Transform"></a>Approach #2: Inverse Burrows-Wheeler Transform</h2><p>If we are familiar with the theory of combinatorics on words, recall that a Lyndon Word L is a word that is the unique minimum of it&#39;s rotations.</p>
+<p>One important mathematical result (due to Fredericksen and Maiorana), is that the concatenation in lexicographic order of Lyndon words with length dividing n, forms a de Bruijin sequence: a sequence where every every word (from the $k^n$​​ available) appears as a substring of length n (where we are allowed to wrap around.)</p>
+<p>For example, when n = 6, k = 2, all the Lyndon words with length dividing n in lexicographic order are (spaces for convenience): 0 000001 000011 000101 000111 001 001011 001101 001111 01 010111 011 011111 1. It turns out this is the smallest de Bruijin sequence.</p>
+<p>We can construct a de Bruijin sequence by Inverse Burrows-Wheeler Transform. Mathematically, an inverse Burrows—Wheeler transform on a word w generates a multi-set of equivalence classes consisting of strings and their rotations. These equivalence classes of strings each contain a Lyndon word as a unique minimum element, so the inverse Burrows—Wheeler transform can be considered to generate a set of Lyndon words. It can be shown that if we perform the inverse Burrows—Wheeler transform on a word w consisting of the size-k alphabet repeated $k^{n-1}$ times (so that it will produce a word the same length as the desired de Bruijn sequence), then the result will be the set of all Lyndon words whose length divides n. It follows that arranging these Lyndon words in lexicographic order will yield a de Bruijn sequence B(k,n), and that this will be the first de Bruijn sequence in lexicographic order. The following method can be used to perform the inverse Burrows—Wheeler transform, using its standard permutation:</p>
+<ul>
+<li>Sort the characters in the string w, yielding a new string w&#39;</li>
+<li>Position the string w&#39; above the string w, and map each letter&#39;s position in w&#39; to its position in w while preserving order. This process defines the standard permutation.</li>
+<li>Write this permutation in cycle notation with the smallest position in each cycle first, and the cycles sorted in increasing order.</li>
+<li>For each cycle, replace each number with the corresponding letter from string w&#39; in that position.</li>
+<li>Each cycle has now become a Lyndon word, and they are arranged in lexicographic order, so dropping the parentheses yields the first de Bruijn sequence.</li>
+</ul>
+<p>For example, to construct the smallest B(2,4) de Bruijn sequence of length 24 = 16, repeat the alphabet (ab) 8 times yielding w=abababababababab. Sort the characters in w, yielding w&#39;=aaaaaaaabbbbbbbb. Position w&#39; above w as shown, and map each element in w&#39; to the corresponding element in w by drawing a line. Number the columns as shown so we can read the cycles of the permutation:<br><img src="/images/leetcode753_2.png" alt=""></p>
+<p>Starting from the left, the cycles are: (1) (2 3 5 9) (4 7 13 10) (6 11) (8 15 14 12) (16).</p>
+<p>Then, replacing each number by the corresponding letter in w&#39; from that column yields: (a)(aaab)(aabb)(ab)(abbb)(b).</p>
+<p>These are all of the Lyndon words whose length divides 4, in lexicographic order, so dropping the parentheses gives B(2,4) = aaaabaabbababbbb.</p>
+<p>The code is as followed:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">crackSafe</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> M = (<span class="keyword">int</span>) Math.pow(k, n-<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">int</span>[] P = <span class="keyword">new</span> <span class="keyword">int</span>[M * k];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; ++i)</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> q = <span class="number">0</span>; q &lt; M; ++q)</span><br><span class="line">                P[i*M + q] = q*k + i;</span><br><span class="line"></span><br><span class="line">        StringBuilder ans = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; M*k; ++i) &#123;</span><br><span class="line">            <span class="keyword">int</span> j = i;</span><br><span class="line">            <span class="keyword">while</span> (P[j] &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">                ans.append(String.valueOf(j / M));</span><br><span class="line">                <span class="keyword">int</span> v = P[j];</span><br><span class="line">                P[j] = -<span class="number">1</span>;</span><br><span class="line">                j = v;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n-<span class="number">1</span>; ++i)</span><br><span class="line">            ans.append(<span class="string">"0"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> String(ans);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>The most attractive part is that, at the first look into this problem, this does not look like a graph problem or a description problem. However, we can use the method from two different aspect to help us understand the problem in different point of view. If we look deeper into it, we can even found that, description, text problems and graph theories are closely related to each other, which showed the beauty of math and computer science.</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Zhao Fengbo</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/JOHNKYON" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:zhaofengbo1321@gmail.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate"> 
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhao Fengbo</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.0.6</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.6"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.6"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.6"></script>
+
+
+
+  
+
+  
+    <script id="dsq-count-scr" src="https://johnkyon-blog.disqus.com/count.js" async></script>
+  
+
+  
+
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

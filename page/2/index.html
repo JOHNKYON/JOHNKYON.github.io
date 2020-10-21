@@ -318,6 +318,198 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://johnkyon.github.io/2018/08/30/leetcode753/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhao Fengbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zhao's Notebook">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/30/leetcode753/" itemprop="url">Leetcode753. Cracking the safe</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-30T22:16:49+09:00">2018-08-30</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/30/leetcode753/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/08/30/leetcode753/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>This is a programming problem on leetcode, and the interesting part is, it can be solved with two different points of<br>view. We&#39;re going to analyze the problem, prove some properties and lemma before we use them, at last write them into code.<br>The problem is as below:</p>
+<h2 id="leetcode753-cracking-the-safe"><a href="#Leetcode-753-Cracking-the-Safe" class="headerlink" title="Leetcode.753. Cracking the Safe"></a>Leetcode.753. Cracking the Safe</h2><p>There is a box protected by a password. The password is <strong>n</strong> digits, where each letter can be one of the first <strong>k</strong> digits <strong>0, 1, ..., k-1</strong>.</p>
+<p>You can keep inputting the password, the password will automatically be matched against the last <strong>n</strong> digits entered.</p>
+<p>For example, assuming the password is <strong>&quot;345&quot;</strong>, I can open it when I type <strong>&quot;012345&quot;</strong>, but I enter a total of 6 digits.</p>
+<p>Please return any string of minimum length that is guaranteed to open the box after the entire string is inputted.</p>
+<h2 id="approach-1-graph-theory"><a href="#Approach-1-Graph-Theory" class="headerlink" title="Approach #1: Graph Theory."></a>Approach #1: Graph Theory.</h2><p>It&#39;s easy to take this problem as a graph theory, Let&#39;s take any number with <strong>n-1</strong> digits as a vertex, to form a single and unique trial of the password, we extend a edge from this node, forming a <strong>n</strong> digits number. It also leads to the new node that was indicated by it&#39;s [1:n] digits. So this problem is turned in to a graph problem defined as below:</p>
+<p><em>Given a directed graph with $k^{n-1}$ nodes, each nodes has $k$ edges, pointed to another node. Find a path that visits every edges exactly once.</em></p>
+<p>Sounds familiar, right? This is a very classic question in graph theory, called <a href="https://en.wikipedia.org/wiki/Eulerian_path" target="_blank" rel="noopener">Eulerian path</a>. By definition, a Eulerian path is a trail in a finite graph which visits every edges exactly once. Eulerian cycle is an Eulerian path that starts and ends at the same vertex. Eulerian path and Eulerian cycle have following properties:</p>
+<ul>
+<li>An undirected graph has an Eulerian cycle if and only if every vertex has even degree, and all of its vertices with nonzero degree belong to a single connected component.</li>
+<li>A directed graph has an Eulerian cycle if and only if every vertex has equal in degree and out degree, and all of its vertices with nonzero degree belong to a single strongly connected component.</li>
+</ul>
+<p>Both properties are easy to prove: For the first property, for each node, it must have an edge in and an edge out, to form a Eulerian path. For the second property, it&#39;s still the same: for each node, one in, one out.</p>
+<p>To solve this problem, we have a theory called <em>Hierholzer&#39;s Algorithm</em>. The algorithm goes as follows:</p>
+<ul>
+<li>Starting from a vertex u, we walk through (unvisited) edges until we get stuck. Because the in-degrees and out-degrees of each node are equal, we can only get stuck at u, which forms a cycle.</li>
+<li>Now, for any node v we had visited that has unvisited edges, we start a new cycle from v with the same procedure as above, and then merge the cycles together to form a new cycle.</li>
+</ul>
+<p>An figure below may helps you to understand the procedure.<br><img src="/images/leetcode753_1.png" alt=""></p>
+<p>Now the problem seems easy to solve. All we need to do is track every edge and mark them as visited. To prevent us from getting stuck (So we don&#39;t need extra memory to store unvisited edges), we start from 000...0, and go to the next node from k-1 to 0. The code is as followed:</p>
+<p><em>java</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    Set&lt;String&gt; seen;</span><br><span class="line">    StringBuilder ans;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">crackSafe</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">1</span> &amp;&amp; k == <span class="number">1</span>) <span class="keyword">return</span> <span class="string">"0"</span>;</span><br><span class="line">        seen = <span class="keyword">new</span> HashSet();</span><br><span class="line">        ans = <span class="keyword">new</span> StringBuilder();</span><br><span class="line"></span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n-<span class="number">1</span>; ++i)</span><br><span class="line">            sb.append(<span class="string">"0"</span>);</span><br><span class="line">        String start = sb.toString();</span><br><span class="line"></span><br><span class="line">        dfs(start, k);</span><br><span class="line">        ans.append(start);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> String(ans);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dfs</span><span class="params">(String node, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> x = <span class="number">0</span>; x &lt; k; ++x) &#123;</span><br><span class="line">            String nei = node + x;</span><br><span class="line">            <span class="keyword">if</span> (!seen.contains(nei)) &#123;</span><br><span class="line">                seen.add(nei);</span><br><span class="line">                dfs(nei.substring(<span class="number">1</span>), k);</span><br><span class="line">                ans.append(x);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="approach-2-inverse-burrows-wheeler-transform"><a href="#Approach-2-Inverse-Burrows-Wheeler-Transform" class="headerlink" title="Approach #2: Inverse Burrows-Wheeler Transform"></a>Approach #2: Inverse Burrows-Wheeler Transform</h2><p>If we are familiar with the theory of combinatorics on words, recall that a Lyndon Word L is a word that is the unique minimum of it&#39;s rotations.</p>
+<p>One important mathematical result (due to Fredericksen and Maiorana), is that the concatenation in lexicographic order of Lyndon words with length dividing n, forms a de Bruijin sequence: a sequence where every every word (from the $k^n$​​ available) appears as a substring of length n (where we are allowed to wrap around.)</p>
+<p>For example, when n = 6, k = 2, all the Lyndon words with length dividing n in lexicographic order are (spaces for convenience): 0 000001 000011 000101 000111 001 001011 001101 001111 01 010111 011 011111 1. It turns out this is the smallest de Bruijin sequence.</p>
+<p>We can construct a de Bruijin sequence by Inverse Burrows-Wheeler Transform. Mathematically, an inverse Burrows—Wheeler transform on a word w generates a multi-set of equivalence classes consisting of strings and their rotations. These equivalence classes of strings each contain a Lyndon word as a unique minimum element, so the inverse Burrows—Wheeler transform can be considered to generate a set of Lyndon words. It can be shown that if we perform the inverse Burrows—Wheeler transform on a word w consisting of the size-k alphabet repeated $k^{n-1}$ times (so that it will produce a word the same length as the desired de Bruijn sequence), then the result will be the set of all Lyndon words whose length divides n. It follows that arranging these Lyndon words in lexicographic order will yield a de Bruijn sequence B(k,n), and that this will be the first de Bruijn sequence in lexicographic order. The following method can be used to perform the inverse Burrows—Wheeler transform, using its standard permutation:</p>
+<ul>
+<li>Sort the characters in the string w, yielding a new string w&#39;</li>
+<li>Position the string w&#39; above the string w, and map each letter&#39;s position in w&#39; to its position in w while preserving order. This process defines the standard permutation.</li>
+<li>Write this permutation in cycle notation with the smallest position in each cycle first, and the cycles sorted in increasing order.</li>
+<li>For each cycle, replace each number with the corresponding letter from string w&#39; in that position.</li>
+<li>Each cycle has now become a Lyndon word, and they are arranged in lexicographic order, so dropping the parentheses yields the first de Bruijn sequence.</li>
+</ul>
+<p>For example, to construct the smallest B(2,4) de Bruijn sequence of length 24 = 16, repeat the alphabet (ab) 8 times yielding w=abababababababab. Sort the characters in w, yielding w&#39;=aaaaaaaabbbbbbbb. Position w&#39; above w as shown, and map each element in w&#39; to the corresponding element in w by drawing a line. Number the columns as shown so we can read the cycles of the permutation:<br><img src="/images/leetcode753_2.png" alt=""></p>
+<p>Starting from the left, the cycles are: (1) (2 3 5 9) (4 7 13 10) (6 11) (8 15 14 12) (16).</p>
+<p>Then, replacing each number by the corresponding letter in w&#39; from that column yields: (a)(aaab)(aabb)(ab)(abbb)(b).</p>
+<p>These are all of the Lyndon words whose length divides 4, in lexicographic order, so dropping the parentheses gives B(2,4) = aaaabaabbababbbb.</p>
+<p>The code is as followed:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">crackSafe</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> M = (<span class="keyword">int</span>) Math.pow(k, n-<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">int</span>[] P = <span class="keyword">new</span> <span class="keyword">int</span>[M * k];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; ++i)</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> q = <span class="number">0</span>; q &lt; M; ++q)</span><br><span class="line">                P[i*M + q] = q*k + i;</span><br><span class="line"></span><br><span class="line">        StringBuilder ans = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; M*k; ++i) &#123;</span><br><span class="line">            <span class="keyword">int</span> j = i;</span><br><span class="line">            <span class="keyword">while</span> (P[j] &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">                ans.append(String.valueOf(j / M));</span><br><span class="line">                <span class="keyword">int</span> v = P[j];</span><br><span class="line">                P[j] = -<span class="number">1</span>;</span><br><span class="line">                j = v;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n-<span class="number">1</span>; ++i)</span><br><span class="line">            ans.append(<span class="string">"0"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> String(ans);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>The most attractive part is that, at the first look into this problem, this does not look like a graph problem or a description problem. However, we can use the method from two different aspect to help us understand the problem in different point of view. If we look deeper into it, we can even found that, description, text problems and graph theories are closely related to each other, which showed the beauty of math and computer science.</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://johnkyon.github.io/2018/06/14/DP1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1160,7 +1352,7 @@ Output: [&quot;ad&quot;, &quot;ae&quot;, &quot;af&quot;, &quot;bd&quot;, &quot;b
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1183,7 +1375,9 @@ Output: [&quot;ad&quot;, &quot;ae&quot;, &quot;af&quot;, &quot;bd&quot;, &quot;b
                     
                       
                     
-                    <span class="site-state-item-count">4</span>
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -1232,7 +1426,11 @@ Output: [&quot;ad&quot;, &quot;ae&quot;, &quot;af&quot;, &quot;bd&quot;, &quot;b
                     
                       
                     
-                    <span class="site-state-item-count">16</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -1455,6 +1653,8 @@ Output: [&quot;ad&quot;, &quot;ae&quot;, &quot;af&quot;, &quot;bd&quot;, &quot;b
 
   
   
+    
+      
     
       
     
